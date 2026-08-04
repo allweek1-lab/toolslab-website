@@ -72,7 +72,7 @@ export default function Home() {
           <a href="#process">Process</a>
           <a href="#contact">Contact Us</a>
         </nav>
-        <a className="contact-icon" href="mailto:contact@toolslab.co.kr" aria-label="이메일로 문의하기"><Icon name="mail" size={18} /></a>
+        <a className="contact-icon" href="mailto:allweek@naver.com" aria-label="이메일로 문의하기"><Icon name="mail" size={18} /></a>
       </header>
 
       <section className="hero">
