@@ -68,6 +68,7 @@ export default function Home() {
         <nav aria-label="주요 메뉴">
           <a href="#top">Home</a>
           <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact Us</a>
         </nav>
@@ -111,6 +112,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="portfolio" id="portfolio">
+        <div className="container">
+          <div className="portfolio-heading">
+            <div>
+              <p className="eyebrow">CONCEPT PORTFOLIO</p>
+              <h2>보여주고 싶은 이야기를<br />각각의 방식으로 만듭니다.</h2>
+            </div>
+            <p>툴스랩의 제작 방향을 보여드리기 위한 콘셉트 작업입니다.</p>
+          </div>
+          <div className="portfolio-grid">
+            <article className="portfolio-card logo-project">
+              <div className="project-art logo-art" aria-label="NORI 로고 콘셉트">
+                <span className="logo-orbit" />
+                <b>NORI</b>
+                <small>NORTHERN RITUAL</small>
+              </div>
+              <div className="project-copy"><p>01 · BRAND IDENTITY</p><h3>NORI 브랜드 로고</h3><span>로고 · 컬러 시스템 · 패키지 방향</span></div>
+            </article>
+            <article className="portfolio-card landing-project">
+              <div className="project-art"><img src="/portfolio-landing.png" alt="스킨케어 브랜드 랜딩 페이지 콘셉트" /></div>
+              <div className="project-copy"><p>02 · WEB EXPERIENCE</p><h3>스킨케어 랜딩 페이지</h3><span>웹 기획 · UI/UX · 반응형 개발</span></div>
+            </article>
+            <article className="portfolio-card film-project">
+              <div className="project-art"><img src="/portfolio-ai-film.png" alt="향수 AI 광고 영상 콘셉트" /><span className="play-mark">▶</span></div>
+              <div className="project-copy"><p>03 · AI ADVERTISING FILM</p><h3>향수 브랜드 필름</h3><span>콘셉트 · AI 비주얼 · 영상 연출</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="workflow" id="process">
         <div className="container">
           <div className="workflow-heading">
@@ -146,14 +177,17 @@ export default function Home() {
           <p className="eyebrow">START A PROJECT</p>
           <h2>만들고 싶은 것을<br />편하게 알려주세요.</h2>
           <p>아직 구체적이지 않아도 괜찮습니다. 목표와 일정, 필요한 결과를 함께 정리해 현실적인 방법을 제안하겠습니다.</p>
-          <a className="button primary" href="mailto:contact@toolslab.co.kr">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
+          <div className="contact-actions">
+            <a className="button primary" href="mailto:contact@toolslab.co.kr">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
+            <a className="phone-link" href="tel:07043503571">070-4350-3571</a>
+          </div>
         </div>
       </section>
 
       <footer className="site-footer">
         <div className="container footer-inner">
           <div><Brand /><p>Digital innovation, thoughtfully made.</p></div>
-          <a href="mailto:contact@toolslab.co.kr">contact@toolslab.co.kr</a>
+          <div className="footer-contact"><a href="tel:07043503571">070-4350-3571</a><a href="mailto:contact@toolslab.co.kr">contact@toolslab.co.kr</a></div>
           <p>© {new Date().getFullYear()} ToolsLab. All rights reserved.</p>
         </div>
       </footer>
