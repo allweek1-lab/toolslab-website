@@ -82,7 +82,7 @@ export default function Home() {
           <h1>기술과 예술의 경계를 허무는<br /><strong>크리에이티브 랩, 툴스랩</strong></h1>
           <p>비즈니스의 디지털 혁신부터 브랜드의 감성까지, 툴스랩이 완성합니다.</p>
           <div className="hero-actions">
-            <a className="button primary" href="mailto:contact@toolslab.co.kr">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
+            <a className="button primary" href="mailto:allweek@naver.com">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
             <a className="button soft" href="#services">서비스 보기</a>
           </div>
         </div>
@@ -178,7 +178,7 @@ export default function Home() {
           <h2>만들고 싶은 것을<br />편하게 알려주세요.</h2>
           <p>아직 구체적이지 않아도 괜찮습니다. 목표와 일정, 필요한 결과를 함께 정리해 현실적인 방법을 제안하겠습니다.</p>
           <div className="contact-actions">
-            <a className="button primary" href="mailto:contact@toolslab.co.kr">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
+            <a className="button primary" href="mailto:allweek@naver.com">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
             <a className="phone-link" href="tel:07043503571">070-4350-3571</a>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <div><Brand /><p>Digital innovation, thoughtfully made.</p></div>
-          <div className="footer-contact"><a href="tel:07043503571">070-4350-3571</a><a href="mailto:contact@toolslab.co.kr">contact@toolslab.co.kr</a></div>
+          <div className="footer-contact"><a href="tel:07043503571">070-4350-3571</a><a href="mailto:allweek@naver.com">allweek@naver.com</a></div>
           <p>© {new Date().getFullYear()} ToolsLab. All rights reserved.</p>
         </div>
       </footer>
