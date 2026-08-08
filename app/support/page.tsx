@@ -39,6 +39,7 @@ export default function SupportPage() {
       </PolicySection>
 
       <PolicySection title="정책 문서">
+        <p><a className="inline-link" href="/data-deletion">계정 및 데이터 삭제 안내 보기</a></p>
         <p><a className="inline-link" href="/privacy">개인정보 처리방침 보기</a></p>
         <p><a className="inline-link" href="/terms">이용약관 보기</a></p>
       </PolicySection>

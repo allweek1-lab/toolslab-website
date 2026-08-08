@@ -12,7 +12,7 @@ test("company homepage stays separate while the Trend Threads host redirects to 
   const page = await source("app/page.tsx");
   assert.match(page, /trendthreads\.toolslab\.co\.kr/);
   assert.match(page, /redirect\("\/support"\)/);
-  assert.doesNotMatch(page, /href="\/(?:support|privacy|terms)"/);
+  assert.doesNotMatch(page, /href="\/(?:support|privacy|terms|data-deletion)"/);
 });
 
 test("policy shell links back to the separate company homepage", async () => {
@@ -41,10 +41,12 @@ test("public app documents use the dedicated Trend Threads subdomain", async () 
     source("app/support/page.tsx"),
     source("app/privacy/page.tsx"),
     source("app/terms/page.tsx"),
+    source("app/data-deletion/page.tsx"),
   ]);
   assert.match(pages[0], /https:\/\/trendthreads\.toolslab\.co\.kr\/support/);
   assert.match(pages[1], /https:\/\/trendthreads\.toolslab\.co\.kr\/privacy/);
   assert.match(pages[2], /https:\/\/trendthreads\.toolslab\.co\.kr\/terms/);
+  assert.match(pages[3], /https:\/\/trendthreads\.toolslab\.co\.kr\/data-deletion/);
 });
 
 test("privacy policy describes collection, providers, retention, deletion, and contact", async () => {
@@ -63,6 +65,23 @@ test("support page publishes reachable contact and in-app safety paths", async (
   assert.match(support, /계정 삭제/);
   assert.match(support, /게시물 신고/);
   assert.match(support, /작성자 숨기기/);
+  assert.match(support, /href="\/data-deletion"/);
+});
+
+test("data deletion page covers in-app, local-only, and no-access deletion paths", async () => {
+  const deletion = await source("app/data-deletion/page.tsx");
+  for (const required of [
+    "설정",
+    "계정 삭제",
+    "로컬 활동 데이터 삭제",
+    "로그인할 수 없는 경우",
+    "가입에 사용한 이메일 주소",
+    "allweek@naver.com",
+    "비밀번호, 인증 코드, Threads 액세스 토큰은 보내지 마세요",
+  ]) assert.match(deletion, new RegExp(required));
+  assert.match(deletion, /Supabase 인증 계정/);
+  assert.match(deletion, /공개 Threads 원문/);
+  assert.doesNotMatch(deletion, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
 
 test("terms identify the service as unofficial and its scores as internal", async () => {
