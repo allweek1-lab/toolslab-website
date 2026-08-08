@@ -4,6 +4,7 @@ import { LegalShell, PolicySection } from "../legal-shell";
 export const metadata: Metadata = {
   title: "Trend Threads 이용약관 | ToolsLab",
   description: "Trend Threads 서비스의 성격과 이용 조건을 안내합니다.",
+  alternates: { canonical: "https://trendthreads.toolslab.co.kr/terms" },
 };
 
 export default function TermsPage() {

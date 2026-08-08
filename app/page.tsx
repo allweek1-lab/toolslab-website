@@ -60,7 +60,11 @@ function Brand() {
   return <span className="brand"><span className="brand-mark">✺</span><span>ToolsLab</span></span>;
 }
 
-export default function Home() {
+export default async function Home() {
+  const requestHeaders = await headers();
+  const hostname = requestHeaders.get("host")?.split(":", 1)[0].toLowerCase();
+  if (hostname === "trendthreads.toolslab.co.kr") redirect("/support");
+
   return (
     <main id="top">
       <header className="site-header">
@@ -188,12 +192,11 @@ export default function Home() {
         <div className="container footer-inner">
           <div><Brand /><p>Digital innovation, thoughtfully made.</p></div>
           <div className="footer-contact"><a href="tel:07043503571">070-4350-3571</a><a href="mailto:allweek@naver.com">allweek@naver.com</a></div>
-          <div className="footer-legal">
-            <div><a href="/support">지원</a><a href="/privacy">개인정보 처리방침</a><a href="/terms">이용약관</a></div>
-            <p>© {new Date().getFullYear()} ToolsLab. All rights reserved.</p>
-          </div>
+          <p>© {new Date().getFullYear()} ToolsLab. All rights reserved.</p>
         </div>
       </footer>
     </main>
   );
 }
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";

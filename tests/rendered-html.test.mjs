@@ -8,11 +8,22 @@ async function source(path) {
   return readFile(new URL(path, root), "utf8");
 }
 
-test("homepage exposes the public support and policy routes", async () => {
+test("company homepage stays separate while the Trend Threads host redirects to support", async () => {
   const page = await source("app/page.tsx");
-  assert.match(page, /href="\/support"/);
-  assert.match(page, /href="\/privacy"/);
-  assert.match(page, /href="\/terms"/);
+  assert.match(page, /trendthreads\.toolslab\.co\.kr/);
+  assert.match(page, /redirect\("\/support"\)/);
+  assert.doesNotMatch(page, /href="\/(?:support|privacy|terms)"/);
+});
+
+test("public app documents use the dedicated Trend Threads subdomain", async () => {
+  const pages = await Promise.all([
+    source("app/support/page.tsx"),
+    source("app/privacy/page.tsx"),
+    source("app/terms/page.tsx"),
+  ]);
+  assert.match(pages[0], /https:\/\/trendthreads\.toolslab\.co\.kr\/support/);
+  assert.match(pages[1], /https:\/\/trendthreads\.toolslab\.co\.kr\/privacy/);
+  assert.match(pages[2], /https:\/\/trendthreads\.toolslab\.co\.kr\/terms/);
 });
 
 test("privacy policy describes collection, providers, retention, deletion, and contact", async () => {

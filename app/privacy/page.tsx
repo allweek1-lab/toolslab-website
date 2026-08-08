@@ -4,6 +4,7 @@ import { LegalShell, PolicySection } from "../legal-shell";
 export const metadata: Metadata = {
   title: "Trend Threads 개인정보 처리방침 | ToolsLab",
   description: "Trend Threads가 처리하는 정보, 이용 목적, 보관 및 삭제 방법을 안내합니다.",
+  alternates: { canonical: "https://trendthreads.toolslab.co.kr/privacy" },
 };
 
 export default function PrivacyPage() {

@@ -4,6 +4,7 @@ import { LegalShell, PolicySection } from "../legal-shell";
 export const metadata: Metadata = {
   title: "Trend Threads 지원 | ToolsLab",
   description: "Trend Threads 앱 이용, 계정, 신고, 개인정보 관련 지원 안내입니다.",
+  alternates: { canonical: "https://trendthreads.toolslab.co.kr/support" },
 };
 
 export default function SupportPage() {
