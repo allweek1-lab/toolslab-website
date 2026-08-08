@@ -188,7 +188,10 @@ export default function Home() {
         <div className="container footer-inner">
           <div><Brand /><p>Digital innovation, thoughtfully made.</p></div>
           <div className="footer-contact"><a href="tel:07043503571">070-4350-3571</a><a href="mailto:allweek@naver.com">allweek@naver.com</a></div>
-          <p>© {new Date().getFullYear()} ToolsLab. All rights reserved.</p>
+          <div className="footer-legal">
+            <div><a href="/support">지원</a><a href="/privacy">개인정보 처리방침</a><a href="/terms">이용약관</a></div>
+            <p>© {new Date().getFullYear()} ToolsLab. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </main>
