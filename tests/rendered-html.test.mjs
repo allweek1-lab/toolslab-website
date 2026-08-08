@@ -52,6 +52,7 @@ test("privacy policy describes collection, providers, retention, deletion, and c
   for (const required of ["처리하는 정보", "Supabase", "Expo Push Service", "보관 기간과 삭제", "계정 삭제", "allweek@naver.com"]) {
     assert.match(privacy, new RegExp(required));
   }
+  assert.match(privacy, /기기 플랫폼·모델명/);
   assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
 
