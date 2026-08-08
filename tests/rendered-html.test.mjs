@@ -15,6 +15,27 @@ test("company homepage stays separate while the Trend Threads host redirects to 
   assert.doesNotMatch(page, /href="\/(?:support|privacy|terms)"/);
 });
 
+test("policy shell links back to the separate company homepage", async () => {
+  const shell = await source("app/legal-shell.tsx");
+  const matches = shell.match(/href="https:\/\/toolslab\.co\.kr\/"/g) ?? [];
+  assert.equal(matches.length, 2);
+  assert.match(shell, /툴스랩 회사 홈페이지로 이동/);
+});
+
+test("all public pages receive baseline browser security headers", async () => {
+  const config = await source("next.config.ts");
+  for (const required of [
+    "Content-Security-Policy",
+    "Permissions-Policy",
+    "Referrer-Policy",
+    "X-Content-Type-Options",
+    "X-Frame-Options",
+  ]) {
+    assert.match(config, new RegExp(required));
+  }
+  assert.match(config, /frame-ancestors 'none'/);
+});
+
 test("public app documents use the dedicated Trend Threads subdomain", async () => {
   const pages = await Promise.all([
     source("app/support/page.tsx"),
