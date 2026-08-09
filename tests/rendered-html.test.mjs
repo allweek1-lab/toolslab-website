@@ -19,7 +19,9 @@ test("policy shell links back to the separate company homepage", async () => {
   const shell = await source("app/legal-shell.tsx");
   const matches = shell.match(/href="https:\/\/toolslab\.co\.kr\/"/g) ?? [];
   assert.equal(matches.length, 2);
-  assert.match(shell, /툴스랩 회사 홈페이지로 이동/);
+  assert.match(shell, /Open the ToolsLab company website/);
+  assert.match(shell, /Support \/ 지원/);
+  assert.match(shell, /Privacy \/ 개인정보/);
 });
 
 test("all public pages receive baseline browser security headers", async () => {
@@ -49,11 +51,15 @@ test("public app documents use the dedicated Trend Threads subdomain", async () 
   assert.match(pages[3], /https:\/\/trendthreads\.toolslab\.co\.kr\/data-deletion/);
 });
 
-test("privacy policy describes collection, providers, retention, deletion, and contact", async () => {
+test("privacy policy is English-primary, Korean-secondary, and names actual processors", async () => {
   const privacy = await source("app/privacy/page.tsx");
-  for (const required of ["앱에 전달되는 정보", "Supabase", "Meta Threads API", "보관, 삭제", "계정 삭제", "allweek@naver.com"]) {
+  for (const required of ["Trend Threads Privacy Policy", "English is the primary policy language", "한국어 개인정보 처리방침", "앱에 전달되는 정보", "Supabase, Inc.", "Vercel Inc.", "Meta Threads API", "보관, 삭제", "계정 삭제", "allweek@naver.com"]) {
     assert.match(privacy, new RegExp(required));
   }
+  assert.match(privacy, /does not receive Threads post text, usernames, profiles/);
+  assert.match(privacy, /normalized post, author, and observation evidence is deleted within a rolling maximum of 24 hours/i);
+  assert.match(privacy, /does not send Meta Platform Data to OpenAI/);
+  assert.doesNotMatch(privacy, /Cloudflare 및 OpenAI Sites/);
   assert.match(privacy, /적격 게시물 30개/);
   assert.match(privacy, /성공적으로 완료된 공식 RECENT 수집 2회/);
   assert.match(privacy, /최소 15분/);
@@ -68,6 +74,9 @@ test("privacy policy describes collection, providers, retention, deletion, and c
 
 test("support page publishes reachable contact and aggregate-topic help paths", async () => {
   const support = await source("app/support/page.tsx");
+  assert.match(support, /Trend Threads Support/);
+  assert.match(support, /English is the primary support language/);
+  assert.match(support, /한국어 지원 안내/);
   assert.match(support, /mailto:allweek@naver\.com/);
   assert.match(support, /tel:07043503571/);
   assert.match(support, /계정 삭제/);
@@ -80,6 +89,9 @@ test("support page publishes reachable contact and aggregate-topic help paths", 
 
 test("data deletion page covers in-app, local-only, and no-access deletion paths", async () => {
   const deletion = await source("app/data-deletion/page.tsx");
+  assert.match(deletion, /Account and Data Deletion/);
+  assert.match(deletion, /English is the primary deletion-guide language/);
+  assert.match(deletion, /한국어 계정 및 데이터 삭제 안내/);
   for (const required of [
     "설정",
     "계정 삭제",
@@ -98,6 +110,9 @@ test("data deletion page covers in-app, local-only, and no-access deletion paths
 
 test("terms identify the service as unofficial and its scores as internal", async () => {
   const terms = await source("app/terms/page.tsx");
+  assert.match(terms, /Trend Threads Terms of Service/);
+  assert.match(terms, /English is the primary terms language/);
+  assert.match(terms, /한국어 이용약관/);
   assert.match(terms, /비공식 탐색 도구/);
   assert.match(terms, /자체 지표/);
   assert.match(terms, /Meta 또는 Threads와 제휴/);

@@ -12,14 +12,14 @@ export function LegalShell({ eyebrow, title, summary, children }: LegalShellProp
   return (
     <main className="legal-page">
       <header className="legal-header">
-        <a className="brand" href="https://toolslab.co.kr/" aria-label="툴스랩 회사 홈페이지로 이동">
+        <a className="brand" href="https://toolslab.co.kr/" aria-label="Open the ToolsLab company website">
           <span className="brand-mark">✺</span>
           <span>ToolsLab</span>
         </a>
-        <nav aria-label="정책 및 지원 메뉴">
-          <Link href="/support">지원</Link>
-          <Link href="/privacy">개인정보 처리방침</Link>
-          <Link href="/terms">이용약관</Link>
+        <nav aria-label="Policy and support navigation">
+          <Link href="/support">Support / 지원</Link>
+          <Link href="/privacy">Privacy / 개인정보</Link>
+          <Link href="/terms">Terms / 약관</Link>
         </nav>
       </header>
 
@@ -34,7 +34,7 @@ export function LegalShell({ eyebrow, title, summary, children }: LegalShellProp
 
       <footer className="legal-footer">
         <span>© {new Date().getFullYear()} ToolsLab</span>
-        <a href="https://toolslab.co.kr/">회사 홈페이지</a>
+        <a href="https://toolslab.co.kr/">Company website / 회사 홈페이지</a>
       </footer>
     </main>
   );

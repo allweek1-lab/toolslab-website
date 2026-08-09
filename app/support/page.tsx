@@ -2,14 +2,55 @@ import type { Metadata } from "next";
 import { LegalShell, PolicySection } from "../legal-shell";
 
 export const metadata: Metadata = {
-  title: "Trend Threads 지원 | ToolsLab",
-  description: "Trend Threads 주제 순위, 저장, Threads 이동과 계정 관련 지원 안내입니다.",
+  title: "Trend Threads Support | ToolsLab",
+  description: "Support for Trend Threads topic discovery, saved topics, the official Threads handoff, and optional accounts.",
   alternates: { canonical: "https://trendthreads.toolslab.co.kr/support" },
 };
 
 export default function SupportPage() {
   return (
-    <LegalShell eyebrow="TREND THREADS SUPPORT" title="Trend Threads 지원" summary="급상승 주제 탐색, 주제 저장 또는 Threads 이동에 문제가 있으면 아래 안내를 확인해 주세요.">
+    <LegalShell eyebrow="TREND THREADS SUPPORT" title="Trend Threads Support" summary="English is the primary support language. Korean guidance is provided below.">
+      <div lang="en">
+      <PolicySection title="Contact">
+        <dl className="contact-list">
+          <div><dt>Operator</dt><dd>ToolsLab (툴스랩)</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:allweek@naver.com">allweek@naver.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:07043503571">+82 70-4350-3571</a></dd></div>
+        </dl>
+        <p>Include the device model, iOS version, app version, affected screen, and approximate time. Do not send a password, authentication code, or Threads access token.</p>
+      </PolicySection>
+
+      <PolicySection title="Actions available in the app">
+        <ul>
+          <li>Save or remove a topic from a Home, Trends, or Search card.</li>
+          <li>Open the underlying topic on the official Threads search page.</li>
+          <li>Delete recent searches and saved local activity from Settings.</li>
+          <li>Delete cached aggregate signals from Settings.</li>
+          <li>Export or delete an optional account from the account menu.</li>
+        </ul>
+      </PolicySection>
+
+      <PolicySection title="If the app says that the live feed is being prepared">
+        <p>If official API approval, collection freshness, retention, or minimum-sample eligibility cannot be verified, the app does not substitute stale posts or fabricated data. Check the network and app version, then select “Check again.”</p>
+        <p>Approval or initial data accumulation may still be in progress and cannot be fixed on the device. If the status continues, email a screenshot and the approximate time.</p>
+      </PolicySection>
+
+      <PolicySection title="Service description">
+        <p>Trend Threads is an independent topic-discovery tool, not a client that copies Threads posts. Scores are internal observation bands, not view counts or official Threads rankings. Core browsing, search, saving, and the official Threads handoff do not require login.</p>
+      </PolicySection>
+
+      <PolicySection title="Policy documents">
+        <p><a className="inline-link" href="/data-deletion">Account and Data Deletion</a></p>
+        <p><a className="inline-link" href="/privacy">Privacy Policy</a></p>
+        <p><a className="inline-link" href="/terms">Terms of Service</a></p>
+      </PolicySection>
+      </div>
+
+      <div className="language-divider" lang="ko">
+        <h2>한국어 지원 안내</h2>
+      </div>
+
+      <div lang="ko">
       <PolicySection title="연락처">
         <dl className="contact-list">
           <div><dt>운영</dt><dd>툴스랩 (ToolsLab)</dd></div>
@@ -44,6 +85,7 @@ export default function SupportPage() {
         <p><a className="inline-link" href="/privacy">개인정보 처리방침 보기</a></p>
         <p><a className="inline-link" href="/terms">이용약관 보기</a></p>
       </PolicySection>
+      </div>
     </LegalShell>
   );
 }
