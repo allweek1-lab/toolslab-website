@@ -55,7 +55,10 @@ test("privacy policy describes collection, providers, retention, deletion, and c
     assert.match(privacy, new RegExp(required));
   }
   assert.match(privacy, /적격 게시물 30개/);
-  assert.match(privacy, /별도 수집 2회/);
+  assert.match(privacy, /성공적으로 완료된 공식 RECENT 수집 2회/);
+  assert.match(privacy, /최소 15분/);
+  assert.match(privacy, /partial·실패·진행 중인 수집/);
+  assert.match(privacy, /15분 미만 간격으로 이어진 재시도·중복 요청과 TOP-only 근거는 별도 수집으로 인정하지 않습니다/);
   assert.match(privacy, /최대 24시간/);
   assert.match(privacy, /최대 8일/);
   assert.doesNotMatch(privacy, /게시물 본문, 사용자명[^\n]+전달됩니다/);
