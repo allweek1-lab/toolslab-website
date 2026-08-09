@@ -2,14 +2,56 @@ import type { Metadata } from "next";
 import { LegalShell, PolicySection } from "../legal-shell";
 
 export const metadata: Metadata = {
-  title: "Trend Threads 계정 및 데이터 삭제 | ToolsLab",
-  description: "Trend Threads의 기기 데이터와 선택적 계정 데이터를 삭제하는 방법을 안내합니다.",
+  title: "Trend Threads Account and Data Deletion | ToolsLab",
+  description: "How to delete Trend Threads on-device activity, cached aggregates, and optional server-account data.",
   alternates: { canonical: "https://trendthreads.toolslab.co.kr/data-deletion" },
 };
 
 export default function DataDeletionPage() {
   return (
-    <LegalShell eyebrow="TREND THREADS DATA DELETION" title="계정 및 데이터 삭제" summary="기기에 저장된 주제·검색 기록과 선택적으로 만든 서버 계정을 각각 삭제할 수 있습니다.">
+    <LegalShell eyebrow="TREND THREADS DATA DELETION" title="Account and Data Deletion" summary="English is the primary deletion-guide language. Complete Korean instructions are provided below.">
+      <div lang="en">
+      <PolicySection title="Delete local activity on this device">
+        <p>In <strong>Settings → Delete local activity data</strong>, remove saved topics, recent searches, and legacy local activity on this device. <strong>Clear cached aggregates</strong> removes only topic-signal data retained for offline display.</p>
+        <p>Saved topics work on-device without login and contain no copy of a Threads post.</p>
+      </PolicySection>
+
+      <PolicySection title="Delete an optional account and server data in the app">
+        <ol>
+          <li>Sign in to the Trend Threads account to be deleted.</li>
+          <li>Open <strong>Settings</strong>.</li>
+          <li>Select <strong>Delete account</strong> and confirm.</li>
+        </ol>
+        <p>Deletion removes the Supabase authentication account and associated server preferences and consent records. Delete local activity separately if saved topics and recent searches on the device must also be removed.</p>
+      </PolicySection>
+
+      <PolicySection title="If sign-in is unavailable">
+        <p>Email <a className="inline-link" href="mailto:allweek@naver.com?subject=Trend%20Threads%20Data%20Deletion%20Request">allweek@naver.com</a> with:</p>
+        <ul>
+          <li>Subject: Trend Threads Data Deletion Request</li>
+          <li>The email address used for the optional account</li>
+          <li>Whether the request covers the full account or specified server data</li>
+        </ul>
+        <p>ToolsLab may reply to the registered email to verify ownership. Do not send a password, authentication code, or Threads access token. Receipt and completion will be confirmed by email.</p>
+      </PolicySection>
+
+      <PolicySection title="Official source data and content on Threads">
+        <p>The public app does not provide or retain copies of individual Threads posts. When approved official API access is enabled, new collection writes do not retain a duplicate raw provider payload, normalized source evidence is removed within 24 hours, and topic aggregates without post or author identifiers are removed within eight days.</p>
+        <p>Original content remains on Threads and cannot be deleted by ToolsLab. The account or content owner must manage the original content on Threads.</p>
+      </PolicySection>
+
+      <PolicySection title="Related documents">
+        <p><a className="inline-link" href="/privacy">Privacy Policy</a></p>
+        <p><a className="inline-link" href="/terms">Terms of Service</a></p>
+        <p><a className="inline-link" href="/support">Support</a></p>
+      </PolicySection>
+      </div>
+
+      <div className="language-divider" lang="ko">
+        <h2>한국어 계정 및 데이터 삭제 안내</h2>
+      </div>
+
+      <div lang="ko">
       <PolicySection title="이 기기의 로컬 활동 삭제">
         <p><strong>설정 → 로컬 활동 데이터 삭제</strong>를 사용하면 이 기기의 저장한 주제, 최근 검색어와 이전 버전의 로컬 활동 기록을 지울 수 있습니다. <strong>저장된 집계 비우기</strong>는 오프라인 표시용 주제 신호 캐시만 삭제합니다.</p>
         <p>주제 저장은 로그인 없이 기기에서만 동작하므로 다른 기기나 서버의 게시물 사본을 삭제하는 기능이 아닙니다.</p>
@@ -44,6 +86,7 @@ export default function DataDeletionPage() {
         <p><a className="inline-link" href="/terms">이용약관 보기</a></p>
         <p><a className="inline-link" href="/support">지원 페이지 보기</a></p>
       </PolicySection>
+      </div>
     </LegalShell>
   );
 }

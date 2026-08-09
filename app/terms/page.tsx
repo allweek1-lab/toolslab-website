@@ -2,19 +2,62 @@ import type { Metadata } from "next";
 import { LegalShell, PolicySection } from "../legal-shell";
 
 export const metadata: Metadata = {
-  title: "Trend Threads 이용약관 | ToolsLab",
-  description: "Trend Threads 주제 순위 서비스의 성격과 이용 조건을 안내합니다.",
+  title: "Trend Threads Terms of Service | ToolsLab",
+  description: "Terms for the Trend Threads de-identified topic-discovery service.",
   alternates: { canonical: "https://trendthreads.toolslab.co.kr/terms" },
 };
 
 export default function TermsPage() {
   return (
-    <LegalShell eyebrow="TERMS OF SERVICE" title="Trend Threads 이용약관" summary="Trend Threads를 이용하기 전에 주제 집계 서비스의 성격과 이용 조건을 확인해 주세요.">
+    <LegalShell eyebrow="TERMS OF SERVICE" title="Trend Threads Terms of Service" summary="English is the primary terms language. A complete Korean version is provided below.">
       <div className="policy-meta">
-        <span>운영주체: 툴스랩 (ToolsLab)</span>
-        <span>시행일: 2026년 8월 9일</span>
+        <span>Operator: ToolsLab (툴스랩), Republic of Korea</span>
+        <span>Effective date: August 10, 2026</span>
       </div>
 
+      <div lang="en">
+        <PolicySection title="1. Nature of the service">
+          <p>Trend Threads is an independent discovery tool that aggregates signals observed through the official Threads API into category rankings and reviewed reasons for rising topics. It does not copy or redistribute individual Threads posts, accounts, or media, and it is not affiliated with or endorsed by Meta or Threads.</p>
+        </PolicySection>
+
+        <PolicySection title="2. Internal indicators">
+          <p>Ranks, score bands, velocity bands, and reasons are ToolsLab estimates calculated from official search-result position, topic breadth per collection opportunity, repeated observations, and bounded post-level trend strength.</p>
+          <p>They are not view counts, a measure of all Threads users, a probability of virality, an investment indicator, a statement of factual accuracy, or an official Threads ranking.</p>
+        </PolicySection>
+
+        <PolicySection title="3. Use and storage">
+          <p>Public topic rankings, category and language filters, time-range filters, on-device search, and saved topics are available without login. Saved topics stay on the device and contain no copies of posts.</p>
+          <p>Selecting a topic opens the official threads.com topic-search page. Reading and interacting with the underlying content takes place on Threads and is subject to its terms and policies.</p>
+        </PolicySection>
+
+        <PolicySection title="4. API authorization and fail-closed availability">
+          <p>Official source processing is available only while ToolsLab has the required approval, credentials, and feature flags. If authorization, freshness, safety, retention, or minimum-sample requirements cannot be verified, the app remains unavailable instead of showing stale posts, fabricated content, or an unapproved feed.</p>
+        </PolicySection>
+
+        <PolicySection title="5. Prohibited conduct">
+          <p>Users must not attempt to identify a person from aggregate signals; engage in unlawful activity, infringement, harassment, threats, hate, or spam; make abusive automated requests; reverse engineer or bypass access controls; or interfere with service operations.</p>
+        </PolicySection>
+
+        <PolicySection title="6. Changes and limitation of purpose">
+          <p>The initial service has no payment, advertising, copied post-detail feed, remote translation provider, or post-based push integration. Features may change or stop because of platform policy, law, security, or operational requirements.</p>
+          <p>The service is an informational trend-discovery tool and does not replace legal, medical, investment, or other professional judgment. Continuous availability of every topic cannot be guaranteed when external services or search results change.</p>
+        </PolicySection>
+
+        <PolicySection title="7. Account termination and contact">
+          <p>An optional account can be deleted from Settings. Questions may be sent to <a className="inline-link" href="mailto:allweek@naver.com">allweek@naver.com</a> or through the <a className="inline-link" href="/support">Support page</a>.</p>
+        </PolicySection>
+
+        <PolicySection title="8. Changes to these terms">
+          <p>These terms may change when the service or applicable requirements change. Material changes will be announced before they take effect.</p>
+        </PolicySection>
+      </div>
+
+      <div className="language-divider" lang="ko">
+        <h2>한국어 이용약관</h2>
+        <p>아래 한국어 안내는 위 영어 주 언어 약관과 동일한 서비스 경계를 설명합니다.</p>
+      </div>
+
+      <div lang="ko">
       <PolicySection title="1. 서비스 성격">
         <p>Trend Threads는 공식 Threads API에서 관측한 신호를 집계해 지금 떠오르는 주제의 분야별 순위와 상승 이유를 보여주는 비공식 탐색 도구입니다. 개별 Threads 게시물·계정·미디어를 복제하거나 재배포하지 않으며 Meta 또는 Threads와 제휴한 공식 서비스가 아닙니다.</p>
       </PolicySection>
@@ -49,6 +92,7 @@ export default function TermsPage() {
       <PolicySection title="8. 약관 변경">
         <p>서비스 내용이나 관련 요구사항의 변경에 따라 이 약관을 수정할 수 있습니다. 중요한 변경은 시행 전에 앱 또는 이 페이지에서 안내합니다.</p>
       </PolicySection>
+      </div>
     </LegalShell>
   );
 }

@@ -88,6 +88,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .legal-content ul { display: grid; gap: 9px; margin: 0; padding-left: 21px; }
 .legal-content strong { color: #26394b; }
 .policy-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-bottom: 38px; padding: 16px 18px; border-radius: 10px; background: #eaf1f7; color: #45596c; font-size: 13px; }
+.language-divider { margin: 58px 0 8px; padding: 24px 0 0; border-top: 3px solid var(--primary); }
+.language-divider h2 { margin: 0; color: var(--primary); font-size: 28px; letter-spacing: -.04em; }
+.language-divider p { margin: 8px 0 0; color: var(--muted); }
 .contact-list { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--line); }
 .contact-list > div { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); }
 .contact-list dt { color: #68727c; font-size: 13px; font-weight: 700; }
