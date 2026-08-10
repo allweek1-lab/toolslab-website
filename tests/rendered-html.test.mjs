@@ -51,6 +51,27 @@ test("public app documents use the dedicated Trend Threads subdomain", async () 
   assert.match(pages[3], /https:\/\/trendthreads\.toolslab\.co\.kr\/data-deletion/);
 });
 
+test("NihongoQ Android privacy policy is public on the company domain and matches the offline app", async () => {
+  const privacy = await source("app/nihongoq/android/privacy/page.tsx");
+  for (const required of [
+    "https://toolslab.co.kr/nihongoq/android/privacy",
+    "니혼고Q 개인정보 처리방침",
+    "시행일: 2026년 8월 11일",
+    "로그인, 자체 서버, 광고, 분석 도구 및 외부 AI를",
+    "기기 안에서 처리하는 정보",
+    "마이크와 임시 녹음",
+    "해당 연습 화면을 나가면",
+    "기기 밖으로 전송되지 않습니다",
+    "JSON 파일",
+    "인터넷 통신 기능이 없습니다",
+    "Android 설정",
+    "allweek1@gmail.com",
+  ]) {
+    assert.match(privacy, new RegExp(required));
+  }
+  assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
+});
+
 test("privacy policy is English-primary, Korean-secondary, and names actual processors", async () => {
   const privacy = await source("app/privacy/page.tsx");
   for (const required of ["Trend Threads Privacy Policy", "English is the primary policy language", "한국어 개인정보 처리방침", "앱에 전달되는 정보", "Supabase, Inc.", "Vercel Inc.", "Meta Threads API", "보관, 삭제", "계정 삭제", "allweek@naver.com"]) {
