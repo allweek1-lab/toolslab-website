@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+
 type IconName = "app" | "web" | "brand" | "video" | "arrow" | "mail" | "check" | "code" | "clock";
 
 const services = [
@@ -72,7 +76,7 @@ export default async function Home() {
         <nav aria-label="주요 메뉴">
           <a href="#top">Home</a>
           <a href="#services">Services</a>
-          <a href="#portfolio">Portfolio</a>
+          <Link href="/portfolio">Portfolio</Link>
           <a href="#process">Process</a>
           <a href="#contact">Contact Us</a>
         </nav>
@@ -198,5 +202,3 @@ export default async function Home() {
     </main>
   );
 }
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
