@@ -72,6 +72,60 @@ test("NihongoQ Android privacy policy is public on the company domain and matche
   assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
 
+test("NihongoQ has a durable company-domain landing page and support path", async () => {
+  const [page, shell, support] = await Promise.all([
+    source("app/nihongoq/page.tsx"),
+    source("app/nihongoq/nihongoq-shell.tsx"),
+    source("app/nihongoq/support/page.tsx"),
+  ]);
+  for (const required of [
+    "https://toolslab.co.kr/nihongoq",
+    "Practical Japanese for Travel",
+    "No account required",
+    "Offline lesson audio",
+    "https://apps.apple.com/kr/app/nihongoq/id6797822086",
+    "한국어 학습자 안내",
+  ]) assert.match(page + shell, new RegExp(required));
+  assert.match(shell, /className="nq-site" lang="en"/);
+  for (const required of [
+    "https://toolslab.co.kr/nihongoq/support",
+    "allweek1@gmail.com",
+    "Settings &gt; Send Feedback",
+    "Settings &gt; Privacy &amp; Ads",
+    "iOS Settings &gt; Privacy &amp; Security &gt; Microphone",
+    "unencrypted JSON",
+    "Report Incorrect Content",
+    "콘텐츠 수정 요청",
+    "일본어 음성이 나오지 않을 때",
+  ]) assert.match(support, new RegExp(required));
+  assert.doesNotMatch(page + shell + support, /YOUR_|PLACEHOLDER|TBD|미정/);
+});
+
+test("NihongoQ iOS privacy policy matches local learning, temporary audio, feedback, and AdMob boundaries", async () => {
+  const privacy = await source("app/nihongoq/privacy/page.tsx");
+  for (const required of [
+    "https://toolslab.co.kr/nihongoq/privacy",
+    "Effective date: August 14, 2026",
+    "without an account",
+    "temporary file on your device",
+    "built-in Japanese speech synthesiser",
+    "Google Mobile Ads",
+    "disables personalised ad requests",
+    "Non-personalised ads can still use identifiers",
+    "iCloud Drive",
+    "Nothing is sent to the developer until you review",
+    "한국어 개인정보 처리방침",
+    "allweek1@gmail.com",
+  ]) assert.match(privacy, new RegExp(required));
+  assert.doesNotMatch(privacy, /does not use (?:advertising|the internet)|인터넷 통신 기능이 없습니다/);
+  assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
+});
+
+test("root app-ads file publishes exactly the NihongoQ AdMob seller relationship", async () => {
+  const appAds = await source("public/app-ads.txt");
+  assert.equal(appAds, "google.com, pub-8346658230857877, DIRECT, f08c47fec0942fa0\n");
+});
+
 test("privacy policy is English-primary, Korean-secondary, and names actual processors", async () => {
   const privacy = await source("app/privacy/page.tsx");
   for (const required of ["Trend Threads Privacy Policy", "English is the primary policy language", "한국어 개인정보 처리방침", "앱에 전달되는 정보", "Supabase, Inc.", "Vercel Inc.", "Meta Threads API", "보관, 삭제", "계정 삭제", "allweek@naver.com"]) {
