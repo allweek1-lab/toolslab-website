@@ -110,13 +110,20 @@ test("NihongoQ iOS privacy policy matches local learning, temporary audio, feedb
     "temporary file on your device",
     "built-in Japanese speech synthesiser",
     "Google Mobile Ads",
-    "disables personalised ad requests",
-    "Non-personalised ads can still use identifiers",
+    "gad_has_consent_for_cookies=0",
+    "forces every banner request into LTD",
+    "invalid-traffic-detection-only cookies or local storage",
+    "contextual programmatic demand",
+    "does not use Google advertising processing to track you across",
+    "모든 배너 요청을 LTD로 강제합니다",
+    "무효 트래픽 탐지 전용 쿠키 또는 로컬 저장소",
+    "사용자를 추적하는 목적으로 사용하지 않습니다",
     "iCloud Drive",
     "Nothing is sent to the developer until you review",
     "한국어 개인정보 처리방침",
     "allweek1@gmail.com",
   ]) assert.match(privacy, new RegExp(required));
+  assert.doesNotMatch(privacy, /Non-personalised ads can still use identifiers|비개인 맞춤 광고도[^<]+식별자/);
   assert.doesNotMatch(privacy, /does not use (?:advertising|the internet)|인터넷 통신 기능이 없습니다/);
   assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
