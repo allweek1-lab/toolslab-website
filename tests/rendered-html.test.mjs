@@ -135,21 +135,25 @@ test("root app-ads file publishes exactly the NihongoQ AdMob seller relationship
 
 test("privacy policy is English-primary, Korean-secondary, and names actual processors", async () => {
   const privacy = await source("app/privacy/page.tsx");
-  for (const required of ["Trend Threads Privacy Policy", "English is the primary policy language", "한국어 개인정보 처리방침", "앱에 전달되는 정보", "Supabase, Inc.", "Vercel Inc.", "Meta Threads API", "보관, 삭제", "계정 삭제", "allweek@naver.com"]) {
+  for (const required of ["Trend Threads Privacy Policy", "English is the primary policy language", "한국어 개인정보 처리방침", "선택적 Threads 연결", "Supabase, Inc.", "Vercel Inc.", "Meta Threads API", "보관과 삭제", "계정 삭제", "allweek@naver.com"]) {
     assert.match(privacy, new RegExp(required));
   }
-  assert.match(privacy, /does not receive Threads post text, usernames, profiles/);
-  assert.match(privacy, /normalized post, author, and observation evidence is deleted within a rolling maximum of 24 hours/i);
+  assert.match(privacy, /requests <code>threads_basic<\/code> and <code>threads_keyword_search<\/code>/);
+  assert.match(privacy, /encrypted separately for each Trend Threads user with AES-256-GCM/);
+  assert.match(privacy, /RECENT keyword searches for six reviewed topic labels/);
+  assert.match(privacy, /current 1–6 activity ranking/);
+  assert.match(privacy, /do not retain or display provider post text, post IDs, author identities/);
+  assert.match(privacy, /lifecycle receipt[\s\S]+up to 24 hours/);
+  assert.match(privacy, /does not fall back to an operator token, test data, public operator aggregates, or cached operator results/);
   assert.match(privacy, /does not send Meta Platform Data to OpenAI/);
   assert.doesNotMatch(privacy, /Cloudflare 및 OpenAI Sites/);
-  assert.match(privacy, /적격 게시물 30개/);
-  assert.match(privacy, /성공적으로 완료된 공식 RECENT 수집 2회/);
-  assert.match(privacy, /최소 15분/);
-  assert.match(privacy, /partial·실패·진행 중인 수집/);
-  assert.match(privacy, /15분 미만 간격으로 이어진 재시도·중복 요청과 TOP-only 근거는 별도 수집으로 인정하지 않습니다/);
+  assert.match(privacy, /사용자별로 AES-256-GCM 암호화/);
+  assert.match(privacy, /검토된 주제 6개/);
+  assert.match(privacy, /현재 활동 1~6위/);
+  assert.match(privacy, /운영자 토큰, 테스트 데이터, 공개 운영자 집계 또는 운영자 cache로 대체하지 않습니다/);
   assert.match(privacy, /최대 24시간/);
-  assert.match(privacy, /최대 8일/);
   assert.doesNotMatch(privacy, /게시물 본문, 사용자명[^\n]+전달됩니다/);
+  assert.doesNotMatch(privacy, /30 eligible RECENT posts|20 distinct authors|aggregate history|최대 8일|로그인 없이 이용/);
   assert.doesNotMatch(privacy, /Expo Push Service/);
   assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
@@ -184,9 +188,11 @@ test("data deletion page covers in-app, local-only, and no-access deletion paths
     "비밀번호, 인증 코드, Threads 액세스 토큰은 보내지 마세요",
   ]) assert.match(deletion, new RegExp(required));
   assert.match(deletion, /Supabase 인증 계정/);
-  assert.match(deletion, /개별 Threads 게시물 사본을 제공하거나 보관하지 않습니다/);
-  assert.match(deletion, /최대 24시간/);
-  assert.match(deletion, /최대 8일/);
+  assert.match(deletion, /Settings → Threads account connection/);
+  assert.match(deletion, /encrypted Threads access token, app-scoped account binding, and any pending OAuth state/);
+  assert.match(deletion, /lifecycle receipts expire within 24 hours/);
+  assert.match(deletion, /암호화 Threads 액세스 토큰/);
+  assert.doesNotMatch(deletion, /aggregate history|최대 8일/);
   assert.doesNotMatch(deletion, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
 
@@ -195,10 +201,13 @@ test("terms identify the service as unofficial and its scores as internal", asyn
   assert.match(terms, /Trend Threads Terms of Service/);
   assert.match(terms, /English is the primary terms language/);
   assert.match(terms, /한국어 이용약관/);
-  assert.match(terms, /비공식 탐색 도구/);
-  assert.match(terms, /자체 지표/);
+  assert.match(terms, /비공식 발견 도구/);
+  assert.match(terms, /자체 추정값/);
   assert.match(terms, /Meta 또는 Threads와 제휴/);
   assert.match(terms, /계정 삭제/);
-  assert.match(terms, /조회수/);
-  assert.match(terms, /게시물·계정·미디어를 복제하거나 재배포하지 않으며/);
+  assert.match(terms, /플랫폼 전체 조회 수/);
+  assert.match(terms, /통제 주제 6개/);
+  assert.match(terms, /<code>threads_basic<\/code>과 <code>threads_keyword_search<\/code>/);
+  assert.match(terms, /운영자 토큰, 공개 운영자 집계, 운영자 cache, 임의 콘텐츠 또는 테스트 데이터로 대체하지 않습니다/);
+  assert.doesNotMatch(terms, /로그인 없이 이용|30 eligible|최소 표본/);
 });
