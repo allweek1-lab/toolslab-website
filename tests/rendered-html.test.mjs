@@ -158,7 +158,7 @@ test("privacy policy is English-primary, Korean-secondary, and names actual proc
   assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
 
-test("support page publishes reachable contact and aggregate-topic help paths", async () => {
+test("support page documents the connected-user Method 2 flow and reachable help paths", async () => {
   const support = await source("app/support/page.tsx");
   assert.match(support, /Trend Threads Support/);
   assert.match(support, /English is the primary support language/);
@@ -166,10 +166,17 @@ test("support page publishes reachable contact and aggregate-topic help paths", 
   assert.match(support, /mailto:allweek@naver\.com/);
   assert.match(support, /tel:07043503571/);
   assert.match(support, /계정 삭제/);
-  assert.match(support, /주제 저장·해제/);
-  assert.match(support, /실시간 피드를 준비하고 있습니다/);
-  assert.match(support, /실제 콘텐츠는[^\n]+Threads/);
+  assert.match(support, /<code>threads_basic<\/code>/);
+  assert.match(support, /<code>threads_keyword_search<\/code>/);
+  assert.match(support, /six controlled topics/);
+  assert.match(support, /current 1–6 activity ranking/);
+  assert.match(support, /does not fall back to an operator token/);
+  assert.match(support, /통제 주제 6개/);
+  assert.match(support, /현재 활동 1~6위/);
+  assert.match(support, /운영자 토큰/);
+  assert.match(support, /실제 콘텐츠는 Threads/);
   assert.doesNotMatch(support, /게시물 신고|작성자 숨기기/);
+  assert.doesNotMatch(support, /로그인 없이|minimum-sample|cached aggregate signals|실시간 피드를 준비하고 있습니다/);
   assert.match(support, /href="\/data-deletion"/);
 });
 
