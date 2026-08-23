@@ -3,7 +3,7 @@ import { LegalShell, PolicySection } from "../legal-shell";
 
 export const metadata: Metadata = {
   title: "Trend Threads Terms of Service | ToolsLab",
-  description: "Terms for the Trend Threads connected-user live topic-discovery service.",
+  description: "Terms for the Trend Threads connected-user live individual-post discovery service.",
   alternates: { canonical: "https://trendthreads.toolslab.co.kr/terms" },
 };
 
@@ -12,23 +12,24 @@ export default function TermsPage() {
     <LegalShell eyebrow="TERMS OF SERVICE" title="Trend Threads Terms of Service" summary="English is the primary terms language. A complete Korean version is provided below.">
       <div className="policy-meta">
         <span>Operator: ToolsLab (툴스랩), Republic of Korea</span>
-        <span>Effective date: August 22, 2026</span>
+        <span>Effective date: August 23, 2026</span>
       </div>
 
       <div lang="en">
         <PolicySection title="1. Nature of the connected-user service">
-          <p>Trend Threads is an independent, unofficial discovery tool. A connected user requests a category, the service checks six controlled topics through the official Threads search, and it shows their current 1–6 activity ranking.</p>
-          <p>Trend Threads is not affiliated with or endorsed by Meta or Threads and does not copy or redistribute Threads posts, accounts, profiles, or media.</p>
+          <p>Trend Threads is an independent, unofficial discovery tool that finds public Threads posts in a category requested by the connected user and ranks individual posts as Rising or Popular.</p>
+          <p>Trend Threads is not affiliated with or endorsed by Meta or Threads. It temporarily displays safety-filtered text-post search results for the requesting connected user, but does not copy, redistribute, display, or download media.</p>
         </PolicySection>
 
         <PolicySection title="2. Account connection and required permissions">
           <p>A live ranking is calculated only while the user is signed in to Trend Threads, has granted <code>threads_basic</code> and <code>threads_keyword_search</code> with the user&apos;s own Threads account, and the connection remains valid.</p>
-          <p><code>threads_basic</code> verifies and displays the app-scoped connected account and supports account binding, expiry, reconnection, disconnect, and deletion. <code>threads_keyword_search</code> performs the six live topic checks requested by that connected user.</p>
+          <p><code>threads_basic</code> verifies and displays the app-scoped connected account and supports account binding, expiry, reconnection, disconnect, and deletion. <code>threads_keyword_search</code> performs only the Rising or Popular searches started by that connected user.</p>
         </PolicySection>
 
         <PolicySection title="3. Internal rankings and official Threads handoff">
-          <p>Ranks and five-point bands are coarse ToolsLab estimates for the six requested controlled topics at that time. They are not platform-wide view counts, official Threads rankings, a guarantee of popularity, a statement of factual accuracy, or investment advice.</p>
-          <p>Trend Threads does not reproduce posts or account content from search responses. Selecting a ranked topic opens the official threads.com search so actual content remains on Threads and is subject to its terms and policies.</p>
+          <p>Rising compares two live RECENT observations of the same six reviewed terms, 61 seconds apart, and includes only individual posts that gained search position or query breadth. Popular is an internal estimate based on the current six TOP searches.</p>
+          <p>Scores and percentages are internal search-visibility estimates, not platform-wide views, likes, engagement counts, official Threads rankings, guarantees of popularity, statements of factual accuracy, or investment advice. Selecting a ranked post opens its exact official permalink on Threads.</p>
+          <p>Search-result text and usernames are displayed only for the current requested ranking. Result content and the two observations are not retained in the server database, device cache, analytics, or advertising systems, and media is not copied or downloaded.</p>
         </PolicySection>
 
         <PolicySection title="4. Fail-closed availability">
@@ -40,8 +41,8 @@ export default function TermsPage() {
         </PolicySection>
 
         <PolicySection title="6. Changes and limitation of purpose">
-          <p>The initial service has no payment, advertising, copied post-detail feed, remote translation provider, or post-based push integration. Features may change or stop because of platform policy, law, security, or operational requirements.</p>
-          <p>The service is an informational trend-discovery tool and does not replace legal, medical, investment, or other professional judgment. Continuous availability of every category or topic cannot be guaranteed when external services or search results change.</p>
+          <p>The initial service has no payment, advertising, media-copying feed, remote translation provider, or post-based push integration. Features may change or stop because of platform policy, law, security, or operational requirements.</p>
+          <p>The service is an informational trend-discovery tool and does not replace legal, medical, investment, or other professional judgment. Continuous availability of every category, search term, or result cannot be guaranteed when external services or search results change.</p>
         </PolicySection>
 
         <PolicySection title="7. Disconnect, account termination, and contact">
@@ -60,18 +61,19 @@ export default function TermsPage() {
 
       <div lang="ko">
         <PolicySection title="1. 연결 사용자 서비스의 성격">
-          <p>Trend Threads는 독립적인 비공식 발견 도구입니다. 연결한 사용자가 카테고리를 요청하면 공식 Threads 검색으로 통제 주제 6개를 확인하고 현재 활동 1~6위를 보여줍니다.</p>
-          <p>Meta 또는 Threads와 제휴하거나 보증받은 서비스가 아니며 Threads 게시물, 계정, 프로필 또는 미디어를 복제하거나 재배포하지 않습니다.</p>
+          <p>Trend Threads는 연결한 사용자가 요청한 분야의 공개 Threads 게시물을 찾아 개별 게시물을 급상승 또는 인기 순위로 보여주는 독립적인 비공식 발견 도구입니다.</p>
+          <p>Meta 또는 Threads와 제휴하거나 보증받은 서비스가 아닙니다. 요청한 연결 사용자에게 안전 필터를 통과한 텍스트 게시물 검색 결과를 일시 표시하지만 미디어를 복제·재배포·표시·다운로드하지 않습니다.</p>
         </PolicySection>
 
         <PolicySection title="2. 계정 연결과 필요한 권한">
           <p>사용자가 Trend Threads에 로그인하고 자신의 Threads 계정으로 <code>threads_basic</code>과 <code>threads_keyword_search</code>를 승인한 상태에서 연결이 유효한 동안에만 실시간 순위를 계산합니다.</p>
-          <p><code>threads_basic</code>은 앱 범위 연결 계정을 확인·표시하고 계정 binding, 만료, 재연결, 연결 해제와 삭제를 지원합니다. <code>threads_keyword_search</code>는 연결 사용자가 요청한 여섯 실시간 주제 확인을 수행합니다.</p>
+          <p><code>threads_basic</code>은 앱 범위 연결 계정을 확인·표시하고 계정 binding, 만료, 재연결, 연결 해제와 삭제를 지원합니다. <code>threads_keyword_search</code>는 연결 사용자가 직접 시작한 급상승 또는 인기 검색에만 사용합니다.</p>
         </PolicySection>
 
         <PolicySection title="3. 자체 순위와 공식 Threads 이동">
-          <p>순위와 5점 단위 구간은 사용자가 요청한 여섯 통제 주제에 대한 해당 시점의 거친 ToolsLab 자체 추정값입니다. 플랫폼 전체 조회 수, Threads 공식 순위, 인기도 보장, 사실의 정확성 또는 투자 조언이 아닙니다.</p>
-          <p>검색 응답의 게시물·계정 콘텐츠를 복제하지 않습니다. 순위 주제를 선택하면 공식 threads.com 검색을 열며 실제 콘텐츠는 Threads에 남고 Threads의 약관과 정책이 적용됩니다.</p>
+          <p>급상승은 같은 검토 검색어 6개의 실제 RECENT 관찰을 61초 간격으로 비교하고 검색 위치 또는 검색어 노출이 증가한 개별 게시물만 포함합니다. 인기는 현재 TOP 검색 6회의 내부 추정입니다.</p>
+          <p>점수와 상승률은 내부 검색 가시성 추정이며 플랫폼 전체 조회 수, 좋아요 수, 참여 수, Threads 공식 순위, 인기 보장, 사실 보증 또는 투자 조언이 아닙니다. 순위 게시물을 누르면 Threads의 정확한 공식 permalink를 엽니다.</p>
+          <p>검색 결과 본문과 사용자 이름은 사용자가 요청한 현재 순위에만 표시합니다. 결과 콘텐츠와 두 관찰은 서버 DB, 기기 cache, analytics 또는 광고 시스템에 보관하지 않고 미디어를 복제·다운로드하지 않습니다.</p>
         </PolicySection>
 
         <PolicySection title="4. 실패 시 대체하지 않는 원칙">
@@ -83,8 +85,8 @@ export default function TermsPage() {
         </PolicySection>
 
         <PolicySection title="6. 기능 변경과 책임 범위">
-          <p>초기 서비스에는 결제, 광고, 게시물 상세 복제, 원격 번역 제공자 또는 게시물 기반 푸시 알림이 연결되어 있지 않습니다. 플랫폼 정책, 법률, 보안 또는 운영상 필요에 따라 기능을 변경하거나 중단할 수 있습니다.</p>
-          <p>서비스는 트렌드 탐색을 돕는 정보 도구이며 법률·의료·투자 등 전문 판단을 대신하지 않습니다. 외부 서비스 중단이나 검색 결과 변화로 모든 카테고리나 주제의 계속적인 제공을 보장할 수는 없습니다.</p>
+          <p>초기 서비스에는 결제, 광고, 미디어 복제 피드, 원격 번역 제공자 또는 게시물 기반 푸시 알림이 연결되어 있지 않습니다. 플랫폼 정책, 법률, 보안 또는 운영상 필요에 따라 기능을 변경하거나 중단할 수 있습니다.</p>
+          <p>서비스는 트렌드 탐색을 돕는 정보 도구이며 법률·의료·투자 등 전문 판단을 대신하지 않습니다. 외부 서비스 중단이나 검색 결과 변화로 모든 분야, 검색어 또는 결과의 계속적인 제공을 보장할 수는 없습니다.</p>
         </PolicySection>
 
         <PolicySection title="7. 연결 해제, 계정 종료와 문의">

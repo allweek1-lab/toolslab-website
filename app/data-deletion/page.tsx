@@ -12,7 +12,7 @@ export default function DataDeletionPage() {
     <LegalShell eyebrow="TREND THREADS DATA DELETION" title="Account and Data Deletion" summary="English is the primary deletion-guide language. Complete Korean instructions are provided below.">
       <div className="policy-meta">
         <span>Operator: ToolsLab (툴스랩), Republic of Korea</span>
-        <span>Effective date: August 22, 2026</span>
+        <span>Effective date: August 23, 2026</span>
       </div>
 
       <div lang="en">
@@ -23,6 +23,7 @@ export default function DataDeletionPage() {
             <li>Select <strong>Disconnect</strong> and confirm.</li>
           </ol>
           <p>Disconnect deletes the encrypted Threads access token, app-scoped account binding, and any pending OAuth state from the service. It does not delete the user&apos;s Threads account or Threads content. Content-free request lifecycle receipts expire within 24 hours.</p>
+          <p>Search-result content and the two live observations used by Rising are transient and are not retained in the server database or device cache.</p>
         </PolicySection>
 
         <PolicySection title="Delete the Trend Threads account and server data in the app">
@@ -35,8 +36,8 @@ export default function DataDeletionPage() {
         </PolicySection>
 
         <PolicySection title="Delete local activity on this device">
-          <p>In <strong>Settings → Delete local activity data</strong>, remove saved topics, recent searches, and legacy local activity on this device. <strong>Clear cached aggregates</strong> removes only topic-signal data retained for offline display.</p>
-          <p>Saved topics remain on the device and contain no copy of a Threads post. Delete local activity separately if it must be removed together with the server account.</p>
+          <p>In <strong>Settings → Delete local activity data</strong>, remove saved categories, recent searches, and legacy local activity on this device.</p>
+          <p>Live post-result content, usernames, permalinks, exact result counts, and Rising observations are never written to the device cache. Delete local preferences separately if they must be removed together with the server account.</p>
         </PolicySection>
 
         <PolicySection title="If sign-in is unavailable">
@@ -50,7 +51,7 @@ export default function DataDeletionPage() {
         </PolicySection>
 
         <PolicySection title="Content on Threads">
-          <p>Trend Threads does not retain or reproduce provider post text, post IDs, author identities, usernames, profiles, permalinks, media, or exact result counts from connected-user searches.</p>
+          <p>Trend Threads temporarily displays safety-filtered post text, usernames, publication time, and exact official permalinks for the current connected-user ranking. Post text, post IDs, usernames, permalinks, media, exact result counts, and the two live observations are not retained in the server database, device cache, analytics, or advertising systems. Media is not displayed, copied, or downloaded.</p>
           <p>Original content remains on Threads and cannot be deleted by ToolsLab. The account or content owner must manage the original Threads account and content through Threads.</p>
         </PolicySection>
 
@@ -73,6 +74,7 @@ export default function DataDeletionPage() {
             <li><strong>Disconnect</strong>를 선택하고 확인합니다.</li>
           </ol>
           <p>연결 해제는 서비스에 저장된 암호화 Threads 액세스 토큰, 앱 범위 계정 연결과 대기 중 OAuth state를 삭제합니다. 사용자의 Threads 계정이나 Threads 콘텐츠는 삭제하지 않습니다. 콘텐츠가 없는 요청 lifecycle 기록은 24시간 이내 만료됩니다.</p>
+          <p>검색 결과 콘텐츠와 급상승에 사용한 두 실제 관찰은 일시 처리되며 서버 DB나 기기 cache에 보관하지 않습니다.</p>
         </PolicySection>
 
         <PolicySection title="앱에서 Trend Threads 계정과 서버 데이터 삭제">
@@ -85,8 +87,8 @@ export default function DataDeletionPage() {
         </PolicySection>
 
         <PolicySection title="이 기기의 로컬 활동 삭제">
-          <p><strong>설정 → 로컬 활동 데이터 삭제</strong>를 사용하면 이 기기의 저장한 주제, 최근 검색어와 이전 버전의 로컬 활동 기록을 지울 수 있습니다. <strong>저장된 집계 비우기</strong>는 오프라인 표시용 주제 신호 캐시만 삭제합니다.</p>
-          <p>저장한 주제는 기기에 남으며 Threads 게시물 사본을 포함하지 않습니다. 서버 계정과 함께 지워야 하는 경우 로컬 활동 삭제를 별도로 실행하세요.</p>
+          <p><strong>설정 → 로컬 활동 데이터 삭제</strong>를 사용하면 이 기기의 저장한 분야, 최근 검색어와 이전 버전의 로컬 활동 기록을 지울 수 있습니다.</p>
+          <p>실시간 게시물 결과 콘텐츠, 사용자 이름, permalink, 정확한 결과 수와 급상승 관찰은 기기 cache에 기록하지 않습니다. 서버 계정과 함께 환경설정도 지워야 하는 경우 로컬 활동 삭제를 별도로 실행하세요.</p>
         </PolicySection>
 
         <PolicySection title="앱에 로그인할 수 없는 경우">
@@ -100,7 +102,7 @@ export default function DataDeletionPage() {
         </PolicySection>
 
         <PolicySection title="Threads의 콘텐츠">
-          <p>Trend Threads는 연결 사용자 검색에서 받은 provider 게시물 본문, 게시물 ID, 작성자 식별자, 사용자 이름, 프로필, permalink, 미디어 또는 정확한 결과 수를 보관하거나 복제하지 않습니다.</p>
+          <p>Trend Threads는 현재 연결 사용자 순위에서 안전 필터를 통과한 게시물 본문, 사용자 이름, 게시 시각과 정확한 공식 permalink를 일시 표시합니다. 게시물 본문, 게시물 ID, 사용자 이름, permalink, 미디어, 정확한 결과 수와 두 실제 관찰은 서버 DB, 기기 cache, analytics 또는 광고 시스템에 보관하지 않습니다. 미디어는 표시·복제·다운로드하지 않습니다.</p>
           <p>원본 콘텐츠는 Threads에 남아 있어 ToolsLab이 삭제할 수 없습니다. Threads 계정과 원본 콘텐츠는 계정 또는 콘텐츠 소유자가 Threads에서 관리해야 합니다.</p>
         </PolicySection>
 
