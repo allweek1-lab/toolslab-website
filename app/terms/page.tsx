@@ -3,7 +3,7 @@ import { LegalShell, PolicySection } from "../legal-shell";
 
 export const metadata: Metadata = {
   title: "Trend Threads Terms of Service | ToolsLab",
-  description: "Terms for the Trend Threads connected-user live individual-post discovery service.",
+  description: "Terms for the Trend Threads connected-user automatic individual-post discovery service.",
   alternates: { canonical: "https://trendthreads.toolslab.co.kr/terms" },
 };
 
@@ -12,7 +12,7 @@ export default function TermsPage() {
     <LegalShell eyebrow="TERMS OF SERVICE" title="Trend Threads Terms of Service" summary="English is the primary terms language. A complete Korean version is provided below.">
       <div className="policy-meta">
         <span>Operator: ToolsLab (툴스랩), Republic of Korea</span>
-        <span>Effective date: August 23, 2026</span>
+        <span>Effective date: August 24, 2026</span>
       </div>
 
       <div lang="en">
@@ -22,14 +22,14 @@ export default function TermsPage() {
         </PolicySection>
 
         <PolicySection title="2. Account connection and required permissions">
-          <p>A live ranking is calculated only while the user is signed in to Trend Threads, has granted <code>threads_basic</code> and <code>threads_keyword_search</code> with the user&apos;s own Threads account, and the connection remains valid.</p>
-          <p><code>threads_basic</code> verifies and displays the app-scoped connected account and supports account binding, expiry, reconnection, disconnect, and deletion. <code>threads_keyword_search</code> performs only the Rising or Popular searches started by that connected user.</p>
+          <p>Automatic rankings are prepared only while the user is signed in to Trend Threads, has granted <code>threads_basic</code> and <code>threads_keyword_search</code> with the user&apos;s own Threads account, has explicitly enabled the feature, and the connection remains valid.</p>
+          <p><code>threads_basic</code> verifies and displays the app-scoped connected account and supports account binding, expiry, reconnection, disconnect, and deletion. <code>threads_keyword_search</code> performs only the automatic-ranking searches explicitly enabled by that connected user or an optional precise manual measurement the user starts.</p>
         </PolicySection>
 
         <PolicySection title="3. Internal rankings and official Threads handoff">
-          <p>Rising compares two live RECENT observations of the same six reviewed terms, 61 seconds apart, and includes only individual posts that gained search position or query breadth. Popular is an internal estimate based on the current six TOP searches.</p>
+          <p>The automatic queue rotates one reviewed term for each of ten categories, compares the same RECENT search at least 61 seconds apart, and refreshes on a staggered cadence of about 60 minutes. Rising includes only individual posts that newly appeared or gained search position. If none rose, current leaders from the same RECENT search are explicitly labeled Popular now and are not represented as rising.</p>
           <p>Scores and percentages are internal search-visibility estimates, not platform-wide views, likes, engagement counts, official Threads rankings, guarantees of popularity, statements of factual accuracy, or investment advice. Selecting a ranked post opens its exact official permalink on Threads.</p>
-          <p>Search-result text and usernames are displayed only for the current requested ranking. Result content and the two observations are not retained in the server database, device cache, analytics, or advertising systems, and media is not copied or downloaded.</p>
+          <p>Automatic baselines and completed snapshots are stored briefly only as owner-, category-, language-, and purpose-bound AES-256-GCM ciphertext, become stale after 75 minutes, and are deleted no later than two hours after observation. Results are not stored in device cache, analytics, advertising systems, or any public or cross-user aggregate, and media is not copied or downloaded.</p>
         </PolicySection>
 
         <PolicySection title="4. Fail-closed availability">
@@ -46,7 +46,7 @@ export default function TermsPage() {
         </PolicySection>
 
         <PolicySection title="7. Disconnect, account termination, and contact">
-          <p>The optional Threads connection can be disconnected and the Trend Threads account can be deleted from Settings. Disconnecting does not delete the user&apos;s Threads account. Questions may be sent to <a className="inline-link" href="mailto:allweek@naver.com">allweek@naver.com</a> or through the <a className="inline-link" href="/support">Support page</a>.</p>
+          <p>Automatic rankings can be turned off, the optional Threads connection can be disconnected, and the Trend Threads account can be deleted from Settings. Turning the feature off removes pending jobs and encrypted baselines and snapshots. Disconnecting additionally removes the encrypted token, account binding, automatic-ranking preference, and pending OAuth state, but does not delete the user&apos;s Threads account. Questions may be sent to <a className="inline-link" href="mailto:allweek@naver.com">allweek@naver.com</a> or through the <a className="inline-link" href="/support">Support page</a>.</p>
         </PolicySection>
 
         <PolicySection title="8. Changes to these terms">
@@ -66,14 +66,14 @@ export default function TermsPage() {
         </PolicySection>
 
         <PolicySection title="2. 계정 연결과 필요한 권한">
-          <p>사용자가 Trend Threads에 로그인하고 자신의 Threads 계정으로 <code>threads_basic</code>과 <code>threads_keyword_search</code>를 승인한 상태에서 연결이 유효한 동안에만 실시간 순위를 계산합니다.</p>
-          <p><code>threads_basic</code>은 앱 범위 연결 계정을 확인·표시하고 계정 binding, 만료, 재연결, 연결 해제와 삭제를 지원합니다. <code>threads_keyword_search</code>는 연결 사용자가 직접 시작한 급상승 또는 인기 검색에만 사용합니다.</p>
+          <p>사용자가 Trend Threads에 로그인하고 자신의 Threads 계정으로 <code>threads_basic</code>과 <code>threads_keyword_search</code>를 승인하고 자동 순위를 명시적으로 켠 상태에서 연결이 유효한 동안에만 자동 순위를 준비합니다.</p>
+          <p><code>threads_basic</code>은 앱 범위 연결 계정을 확인·표시하고 계정 binding, 만료, 재연결, 연결 해제와 삭제를 지원합니다. <code>threads_keyword_search</code>는 연결 사용자가 명시적으로 켠 자동 순위 검색 또는 사용자가 시작한 선택적 정밀 수동 측정에만 사용합니다.</p>
         </PolicySection>
 
         <PolicySection title="3. 자체 순위와 공식 Threads 이동">
-          <p>급상승은 같은 검토 검색어 6개의 실제 RECENT 관찰을 61초 간격으로 비교하고 검색 위치 또는 검색어 노출이 증가한 개별 게시물만 포함합니다. 인기는 현재 TOP 검색 6회의 내부 추정입니다.</p>
+          <p>자동 queue는 10개 분야마다 검토 검색어 1개를 순환 선택하고 같은 RECENT 검색을 61초 이상 간격으로 비교하며 약 60분마다 분산 갱신합니다. 새로 나타났거나 검색 위치가 상승한 개별 게시물만 급상승에 포함합니다. 상승 글이 없으면 같은 RECENT 검색의 현재 상위를 현재 인기 게시물로 명확히 구분하며 급상승으로 표현하지 않습니다.</p>
           <p>점수와 상승률은 내부 검색 가시성 추정이며 플랫폼 전체 조회 수, 좋아요 수, 참여 수, Threads 공식 순위, 인기 보장, 사실 보증 또는 투자 조언이 아닙니다. 순위 게시물을 누르면 Threads의 정확한 공식 permalink를 엽니다.</p>
-          <p>검색 결과 본문과 사용자 이름은 사용자가 요청한 현재 순위에만 표시합니다. 결과 콘텐츠와 두 관찰은 서버 DB, 기기 cache, analytics 또는 광고 시스템에 보관하지 않고 미디어를 복제·다운로드하지 않습니다.</p>
+          <p>자동 baseline과 완성 snapshot은 사용자·분야·언어·용도에 결합된 AES-256-GCM 암호문으로만 단기 저장하고 75분 후 오래된 상태가 되며 관찰 후 최대 2시간 안에 삭제합니다. 결과는 기기 cache, analytics, 광고 시스템 또는 공개·사용자 간 집계에 저장하지 않고 미디어를 복제·다운로드하지 않습니다.</p>
         </PolicySection>
 
         <PolicySection title="4. 실패 시 대체하지 않는 원칙">
@@ -90,7 +90,7 @@ export default function TermsPage() {
         </PolicySection>
 
         <PolicySection title="7. 연결 해제, 계정 종료와 문의">
-          <p>선택적 Threads 연결 해제와 Trend Threads 계정 삭제는 설정에서 진행할 수 있습니다. 연결 해제는 사용자의 Threads 계정을 삭제하지 않습니다. 약관 또는 정책 문의는 <a className="inline-link" href="mailto:allweek@naver.com">allweek@naver.com</a> 또는 <a className="inline-link" href="/support">지원 페이지</a>를 이용해 주세요.</p>
+          <p>자동 순위 끄기, 선택적 Threads 연결 해제와 Trend Threads 계정 삭제는 설정에서 진행할 수 있습니다. 자동 순위를 끄면 대기 작업과 암호화 baseline·snapshot을 삭제합니다. 연결 해제는 암호화 token, 계정 연결, 자동 순위 설정과 OAuth state도 삭제하지만 사용자의 Threads 계정은 삭제하지 않습니다. 약관 또는 정책 문의는 <a className="inline-link" href="mailto:allweek@naver.com">allweek@naver.com</a> 또는 <a className="inline-link" href="/support">지원 페이지</a>를 이용해 주세요.</p>
         </PolicySection>
 
         <PolicySection title="8. 약관 변경">
