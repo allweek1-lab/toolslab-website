@@ -56,7 +56,9 @@ export default function PasswordQPrivacyPage() {
 
               <PolicySection title="6. iCloud, tracking, advertising, and analytics">
                 <p>This release does not include automatic iCloud vault sync. If it is introduced later, this policy and the App Store privacy disclosures will be updated before release.</p>
-                <p>PasswordQ does not include an advertising SDK, third-party analytics SDK, or user-tracking feature. Apart from the optional HIBP processing described above, ToolsLab does not collect app analytics, advertising identifiers, location, contacts, or vault content. Apple may process information when providing iOS and the App Store under Apple&apos;s policies.</p>
+                <p>The free version may show Google AdMob banner ads only on the top-level Logins and standalone Passwords lists in the main app. Ads are not shown while opening the vault; viewing, copying, or editing secrets; using security cards, voice input, import, backup, or password generation; or inside the AutoFill and Safari extensions. Vault content, saved-site lists, usernames, passwords, security cards, verification codes, and passkeys are not provided to the advertising SDK.</p>
+                <p>PasswordQ disables behavioral ad personalization before starting the advertising SDK. Where required, Google User Messaging Platform presents consent and privacy choices before an ad request, and the legally required privacy-options form can be reopened from app settings. PasswordQ does not request App Tracking Transparency permission or collect contacts or precise location for advertising.</p>
+                <p>When delivering ads, Google Mobile Ads SDK may process approximate location inferred from an IP address, crash and performance diagnostics, device or advertising identifiers, displayed-ad information, and advertising or app interaction data within the scope published by Google. Google&apos;s privacy policy and advertising terms apply to that processing. ToolsLab does not combine this data with vault content or use a separate third-party behavioral analytics SDK. Optional HIBP processing is described above. Apple may process information when providing iOS and the App Store under Apple&apos;s policies.</p>
               </PolicySection>
 
               <PolicySection title="7. Retention and deletion">
@@ -64,7 +66,7 @@ export default function PasswordQPrivacyPage() {
               </PolicySection>
 
               <PolicySection title="8. Children, changes, and contact">
-                <p>PasswordQ does not create advertising profiles or intentionally collect personal information from children. A parent or guardian can use device and App Store age and family controls.</p>
+                <p>PasswordQ does not create behavioral advertising profiles for children and limits advertising content to a general-audience rating. A parent or guardian can use device and App Store age and family controls.</p>
                 <p>If features, external services, or legal requirements change, this policy and the App Store disclosures will be updated before the changed processing is released.</p>
                 <dl className="contact-list">
                   <div><dt>Developer</dt><dd>Jae Ho Min · ToolsLab</dd></div>
@@ -106,7 +108,9 @@ export default function PasswordQPrivacyPage() {
 
               <PolicySection title="6. iCloud, 추적, 광고와 분석">
                 <p>현재 출시 버전에는 iCloud 자동 금고 동기화가 포함되어 있지 않습니다. 향후 제공한다면 출시 전에 이 방침과 App Store 개인정보 공개를 갱신합니다.</p>
-                <p>PasswordQ는 광고 SDK, 제3자 분석 SDK 또는 사용자 추적 기능을 포함하지 않습니다. 위 선택형 HIBP 처리를 제외하면 ToolsLab은 앱 사용 분석, 광고 식별자, 위치, 연락처 또는 금고 내용을 수집하지 않습니다. Apple이 iOS와 App Store를 제공하면서 처리하는 정보에는 Apple의 정책이 적용됩니다.</p>
+                <p>PasswordQ의 무료 버전은 메인 앱의 로그인 정보·일반 비밀번호 최상위 목록에만 Google AdMob 배너 광고를 표시할 수 있습니다. 광고는 금고 열기, 비밀번호 보기·복사·수정, 보안카드, 음성 입력, 가져오기·백업, 비밀번호 생성, AutoFill 또는 Safari 확장 화면에는 표시되지 않습니다. 금고 내용, 저장한 사이트 목록, 사용자 이름, 비밀번호, 보안카드, 인증코드와 패스키는 광고 SDK로 전달하지 않습니다.</p>
+                <p>PasswordQ는 광고 SDK를 시작하기 전에 행동 기반 광고 맞춤설정을 끄며, 관련 지역에서는 Google User Messaging Platform을 통해 필요한 동의와 개인정보 선택을 광고 요청 전에 확인합니다. 앱 설정에서 법적으로 필요한 광고 개인정보 선택을 다시 열 수 있습니다. PasswordQ는 App Tracking Transparency 권한을 요청하거나 광고 목적으로 연락처·정확한 위치를 수집하지 않습니다.</p>
+                <p>광고 제공 과정에서 Google Mobile Ads SDK는 Google이 공개한 범위에 따라 IP 주소로 추정한 대략적 위치, 충돌·성능 진단, 기기 또는 광고 관련 식별자, 표시된 광고 정보와 광고·앱 상호작용 정보를 처리할 수 있습니다. 이 처리에는 Google의 개인정보 처리방침과 광고 서비스 약관이 적용됩니다. ToolsLab은 이 자료를 금고 내용과 결합하지 않으며 별도의 제3자 사용자 행동 분석 SDK를 사용하지 않습니다. 선택형 HIBP 처리는 위 절에 따릅니다. Apple이 iOS와 App Store를 제공하면서 처리하는 정보는 Apple의 정책이 적용됩니다.</p>
               </PolicySection>
 
               <PolicySection title="7. 보존과 삭제">
@@ -114,7 +118,7 @@ export default function PasswordQPrivacyPage() {
               </PolicySection>
 
               <PolicySection title="8. 아동, 변경과 문의">
-                <p>PasswordQ는 아동의 개인정보를 의도적으로 수집하거나 광고 프로필을 만들지 않습니다. 보호자는 기기와 App Store의 연령 및 가족 설정을 사용할 수 있습니다.</p>
+                <p>PasswordQ는 아동을 대상으로 행동 기반 광고 프로필을 만들지 않으며 광고 콘텐츠 등급을 전체 이용가 수준으로 제한합니다. 보호자는 기기와 App Store의 연령 및 가족 설정을 사용할 수 있습니다.</p>
                 <p>기능, 외부 서비스 또는 법적 요구사항이 바뀌면 변경된 처리를 출시하기 전에 이 방침과 App Store 개인정보 공개를 갱신합니다.</p>
                 <dl className="contact-list">
                   <div><dt>운영자</dt><dd>Jae Ho Min · ToolsLab</dd></div>
