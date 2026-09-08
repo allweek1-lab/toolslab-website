@@ -41,6 +41,10 @@ export default function RootLayout({
     <html lang="ko">
       <head>
         <meta
+          name="naver-site-verification"
+          content="e514b721f29735c57ec1b8df791cd5c6844a9314"
+        />
+        <meta
           name="facebook-domain-verification"
           content="oune087q7m21fs2zrhijtg8ef8pdrh"
         />
