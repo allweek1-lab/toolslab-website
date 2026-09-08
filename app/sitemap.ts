@@ -24,5 +24,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${origin}/passwordq/support`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${origin}/passwordq/privacy`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

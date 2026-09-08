@@ -128,6 +128,52 @@ test("NihongoQ iOS privacy policy matches local learning, temporary audio, feedb
   assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
 });
 
+test("PasswordQ support gives complete, password-safe setup and recovery guidance", async () => {
+  const [support, shell, sitemap] = await Promise.all([
+    source("app/passwordq/support/page.tsx"),
+    source("app/passwordq/passwordq-shell.tsx"),
+    source("app/sitemap.ts"),
+  ]);
+  for (const required of [
+    "https://toolslab.co.kr/passwordq/support",
+    "allweek1@gmail.com",
+    "Import existing passwords",
+    "iOS Settings &gt; General &gt; AutoFill &amp; Passwords",
+    "On My iPhone",
+    "Security cards and voice input",
+    "기존 비밀번호 가져오기",
+    "자동완성 켜기",
+    "보안카드와 음성 입력",
+    "PasswordQ 개인정보 처리방침 보기",
+    "34 Ilsan-ro 463beon-gil",
+  ]) assert.match(support + shell + sitemap, new RegExp(required));
+  assert.match(support, /Never include a password, one-time code, recovery key, security-card number, or backup file/);
+  assert.match(support, /iOS 보안상 PasswordQ가 다른 비밀번호 앱의 내부 저장공간을 직접 읽을 수는 없습니다/);
+  assert.doesNotMatch(support + shell, /YOUR_|PLACEHOLDER|TBD|미정/);
+});
+
+test("PasswordQ privacy policy matches the local vault and optional external processing boundaries", async () => {
+  const privacy = await source("app/passwordq/privacy/page.tsx");
+  for (const required of [
+    "https://toolslab.co.kr/passwordq/privacy",
+    "Effective date: September 8, 2026",
+    "local-first password vault",
+    "cannot be recovered by ToolsLab",
+    "supported on-device speech recognition only",
+    "first five characters of the password&apos;s SHA-1 hash",
+    "api.pwnedpasswords.com",
+    "does not include an advertising SDK",
+    "한국어 개인정보 처리방침",
+    "기기 내 음성 인식만 사용",
+    "SHA-1 해시 앞 5자만",
+    "광고 SDK, 제3자 분석 SDK 또는 사용자 추적 기능을 포함하지 않습니다",
+    "allweek1@gmail.com",
+    "34 Ilsan-ro 463beon-gil",
+  ]) assert.match(privacy, new RegExp(required));
+  assert.doesNotMatch(privacy, /full password or complete password hash[^<]+send|전체 비밀번호나 완전한 비밀번호 해시는 전송합니다/);
+  assert.doesNotMatch(privacy, /YOUR_|PLACEHOLDER|TBD|미정/);
+});
+
 test("root app-ads file publishes exactly the NihongoQ AdMob seller relationship", async () => {
   const appAds = await source("public/app-ads.txt");
   assert.equal(appAds, "google.com, pub-8346658230857877, DIRECT, f08c47fec0942fa0\n");

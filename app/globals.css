@@ -215,3 +215,44 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (prefers-reduced-motion: reduce) { .nq-button { transition: none; } }
+
+/* PasswordQ support and privacy pages */
+.pq-site { --pq-blue: #0b55b7; --pq-navy: #082d61; --pq-soft: #eaf3ff; min-height: 100vh; background: #f8fbff; color: #12243a; }
+.pq-header { position: sticky; top: 0; z-index: 30; display: grid; grid-template-columns: 1fr auto 1fr; min-height: 72px; align-items: center; gap: 24px; padding: 0 max(24px, calc((100vw - 1060px) / 2)); border-bottom: 1px solid rgb(12 70 145 / .12); background: rgb(248 251 255 / .94); backdrop-filter: blur(18px); }
+.pq-brand { display: inline-flex; align-items: center; gap: 11px; width: fit-content; color: var(--pq-navy); font-size: 19px; font-weight: 800; letter-spacing: -.035em; }
+.pq-brand-mark { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 12px; background: linear-gradient(145deg, #2b7ce2, var(--pq-navy)); color: white; font-size: 21px; font-weight: 800; box-shadow: 0 7px 18px rgb(11 85 183 / .22); }
+.pq-header nav, .pq-footer nav { display: flex; align-items: center; gap: 24px; color: #53667d; font-size: 13px; font-weight: 700; }
+.pq-header nav a:hover, .pq-footer nav a:hover { color: var(--pq-blue); }
+.pq-tools-link { justify-self: end; padding: 10px 16px; border: 1px solid #b9cbe0; border-radius: 999px; color: var(--pq-navy); font-size: 12px; font-weight: 800; }
+.pq-legal-page { background: #f8fbff; }
+.pq-legal-page .legal-document { width: min(100% - 48px, 980px); padding-top: 76px; }
+.pq-legal-page .legal-intro h1, .pq-legal-page .legal-content h2 { color: var(--pq-navy); }
+.pq-legal-page .legal-intro h1 { font-size: clamp(38px, 6vw, 62px); }
+.pq-legal-page .policy-meta { background: var(--pq-soft); }
+.pq-legal-page .language-divider { border-color: var(--pq-blue); }
+.pq-legal-page .language-divider h2 { color: var(--pq-navy); }
+.pq-support-contact { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-bottom: 42px; padding: 28px; border: 1px solid #d7e7fa; border-radius: 18px; background: var(--pq-soft); }
+.pq-support-contact div { display: grid; gap: 6px; }
+.pq-support-contact small { color: #426487; font-size: 10px; font-weight: 850; letter-spacing: .13em; }
+.pq-support-contact strong { color: var(--pq-navy); font-size: 21px; }
+.pq-support-contact p { margin: 0; font-size: 13px; }
+.pq-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 20px; border-radius: 12px; background: var(--pq-blue); color: white; font-size: 13px; font-weight: 800; box-shadow: 0 9px 22px rgb(11 85 183 / .18); }
+.pq-legal-page ol { display: grid; gap: 10px; padding-left: 22px; }
+.pq-footer { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; padding: 38px max(24px, calc((100vw - 1060px) / 2)); border-top: 1px solid #dbe7f4; background: #eef5fc; color: #566b82; }
+.pq-footer > div { display: flex; align-items: center; gap: 12px; }
+.pq-footer strong, .pq-footer small { display: block; }
+.pq-footer strong { color: var(--pq-navy); font-size: 14px; }
+.pq-footer small { margin-top: 2px; font-size: 9px; }
+.pq-footer p { justify-self: end; margin: 0; font-size: 11px; }
+
+@media (max-width: 800px) {
+  .pq-header { grid-template-columns: 1fr auto; padding-inline: 18px; }
+  .pq-header nav { display: none; }
+  .pq-tools-link { padding: 9px 13px; }
+  .pq-legal-page .legal-document { width: min(100% - 32px, 680px); padding-top: 55px; }
+  .pq-support-contact { align-items: flex-start; flex-direction: column; padding: 22px; }
+  .pq-support-contact .pq-button { width: 100%; }
+  .pq-footer { grid-template-columns: 1fr; padding-inline: 18px; }
+  .pq-footer nav { flex-wrap: wrap; gap: 16px; }
+  .pq-footer p { justify-self: start; }
+}
