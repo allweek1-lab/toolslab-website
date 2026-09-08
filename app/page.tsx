@@ -76,6 +76,7 @@ export default async function Home() {
         <nav aria-label="주요 메뉴">
           <a href="#top">Home</a>
           <a href="#services">Services</a>
+          <Link href="/automation">업무 자동화</Link>
           <Link href="/portfolio">Portfolio</Link>
           <a href="#process">Process</a>
           <a href="#contact">Contact Us</a>
@@ -92,6 +93,7 @@ export default async function Home() {
           <div className="hero-actions">
             <a className="button primary" href="mailto:allweek@naver.com">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
             <a className="button soft" href="#services">서비스 보기</a>
+            <Link className="button soft" href="/automation">엑셀 자동화 · 무료 데모</Link>
           </div>
         </div>
       </section>
