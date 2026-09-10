@@ -76,6 +76,7 @@ export default async function Home() {
         <nav aria-label="주요 메뉴">
           <a href="#top">Home</a>
           <a href="#services">Services</a>
+          <a href="#global-listing">영문 상품페이지</a>
           <Link href="/automation">업무 자동화</Link>
           <Link href="/portfolio">Portfolio</Link>
           <a href="#process">Process</a>
@@ -118,6 +119,71 @@ export default async function Home() {
                 {service.id === "video" && <div className="video-stroke" aria-hidden="true" />}
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="listing-offer" id="global-listing">
+        <div className="container">
+          <div className="listing-heading">
+            <div>
+              <p className="eyebrow">GLOBAL PRODUCT LISTING</p>
+              <h2>한국어 상품자료를 검증해 <br />판매 가능한 영문 페이지로 만듭니다.</h2>
+            </div>
+            <p>원문에 없는 효능이나 수치를 만들지 않습니다. 제공된 자료와 공개된 공식 정보만 근거로 제목, 핵심 장점, 상세 설명, FAQ를 정리합니다.</p>
+          </div>
+
+          <div className="listing-proof">
+            <span><Icon name="check" size={18} /> 사실 확인표 제공</span>
+            <span><Icon name="check" size={18} /> 채널에 맞춘 영문 카피</span>
+            <span><Icon name="check" size={18} /> 수정 가능한 문서로 납품</span>
+          </div>
+
+          <div className="listing-grid">
+            <article className="listing-plan">
+              <p>QUICK AUDIT</p>
+              <h3>상품페이지 진단</h3>
+              <strong>59,000원</strong>
+              <ul>
+                <li>핵심 문제와 우선순위 진단</li>
+                <li>제목·첫 화면 개선안</li>
+                <li>실행 체크리스트</li>
+              </ul>
+            </article>
+            <article className="listing-plan featured">
+              <p>CORE LISTING</p>
+              <h3>영문 상품페이지 제작</h3>
+              <strong>220,000원</strong>
+              <ul>
+                <li>제목·불릿·상세 설명·FAQ</li>
+                <li>근거 자료와 금지 표현 확인</li>
+                <li>수정 1회 포함</li>
+              </ul>
+            </article>
+            <article className="listing-plan">
+              <p>FULL PACKAGE</p>
+              <h3>옵션·경쟁사 포함 패키지</h3>
+              <strong>390,000원</strong>
+              <ul>
+                <li>경쟁 상품 구조 분석</li>
+                <li>다중 옵션·변형 구성</li>
+                <li>채널별 업로드용 문안</li>
+              </ul>
+            </article>
+          </div>
+
+          <div className="listing-actions">
+            <div>
+              <b>구매 전, 공개 상품 URL 하나로 미니 진단을 받아보세요.</b>
+              <span>상품 URL · 판매 채널 · 옵션 수 · 희망 완료일을 보내주시면 확인 후 답변드립니다.</span>
+            </div>
+            <a className="button primary" href="mailto:allweek@naver.com?subject=%5BToolsLab%5D%20%EC%83%81%ED%92%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%AF%B8%EB%8B%88%20%EC%A7%84%EB%8B%A8%20%EC%8B%A0%EC%B2%AD&amp;body=%EC%83%81%ED%92%88%20URL%3A%0A%ED%8C%90%EB%A7%A4%20%EC%B1%84%EB%84%90%3A%0A%EC%98%B5%EC%85%98%20%EC%88%98%3A%0A%ED%9D%AC%EB%A7%9D%20%EC%99%84%EB%A3%8C%EC%9D%BC%3A">무료 미니 진단 신청 <Icon name="arrow" size={17} /></a>
+          </div>
+
+          <div className="listing-links" aria-label="해외 주문과 직접 제작 자료">
+            <a href="https://www.upwork.com/services/product/2097546298889366289" target="_blank" rel="noreferrer">해외 주문: Upwork에서 보기 <Icon name="arrow" size={15} /></a>
+            <a href="https://payhip.com/b/89TEa" target="_blank" rel="noreferrer">무료 상품페이지 점검표 받기 <Icon name="arrow" size={15} /></a>
+            <a href="https://payhip.com/b/V8mBN" target="_blank" rel="noreferrer">직접 제작용 전자책 번들 보기 <Icon name="arrow" size={15} /></a>
           </div>
         </div>
       </section>
