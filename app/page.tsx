@@ -181,6 +181,7 @@ export default async function Home() {
           </div>
 
           <div className="listing-links" aria-label="해외 주문과 직접 제작 자료">
+            <a href="/tools-lab-listing-source-audit-sample.pdf" target="_blank" rel="noreferrer">샘플 납품물 PDF 보기 <Icon name="arrow" size={15} /></a>
             <a href="https://www.upwork.com/services/product/2097546298889366289" target="_blank" rel="noreferrer">해외 주문: Upwork에서 보기 <Icon name="arrow" size={15} /></a>
             <a href="https://payhip.com/b/89TEa" target="_blank" rel="noreferrer">무료 상품페이지 점검표 받기 <Icon name="arrow" size={15} /></a>
             <a href="https://payhip.com/b/V8mBN" target="_blank" rel="noreferrer">직접 제작용 전자책 번들 보기 <Icon name="arrow" size={15} /></a>
