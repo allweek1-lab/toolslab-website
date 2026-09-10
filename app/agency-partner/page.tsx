@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const inquiryHref =
-  "mailto:allweek@naver.com?subject=Tools%20Lab%20white-label%20pilot&body=Agency%20name%3A%0ATarget%20marketplace%3A%0APublic%20product%20URL%3A%0ANumber%20of%20SKUs%3A%0ARequested%20deadline%3A";
+  "https://docs.google.com/forms/d/e/1FAIpQLSdS5ZAi6gEM6MM0kwVl0LV8_aqXO-IRBs8RkvMJaGtrE_RnjQ/viewform";
 
 export default function AgencyPartnerPage() {
   const structuredData = {
@@ -38,7 +38,7 @@ export default function AgencyPartnerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <header className={styles.header}>
         <Link href="/" className={styles.brand}><span>✺</span> ToolsLab</Link>
-        <a href={inquiryHref} className={styles.headerCta}>Discuss a pilot</a>
+        <a href={inquiryHref} target="_blank" rel="noreferrer" className={styles.headerCta}>Discuss a pilot</a>
       </header>
 
       <section className={styles.hero}>
@@ -47,7 +47,7 @@ export default function AgencyPartnerPage() {
           <h1>Add product-listing capacity without adding headcount.</h1>
           <p className={styles.lead}>Tools Lab reviews the source, structures the product facts and delivers editable English listing copy under your agency workflow. Your client relationship stays with you.</p>
           <div className={styles.actions}>
-            <a href={inquiryHref} className={styles.primary}>Start one paid pilot <span>→</span></a>
+            <a href={inquiryHref} target="_blank" rel="noreferrer" className={styles.primary}>Start one paid pilot <span>→</span></a>
             <a href="/tools-lab-listing-source-audit-sample.pdf" target="_blank" rel="noreferrer" className={styles.secondary}>View the audit sample</a>
           </div>
           <p className={styles.microcopy}>One SKU · fixed scope · no retainer · editable handoff</p>
@@ -120,7 +120,7 @@ export default function AgencyPartnerPage() {
       <section className={styles.finalCta}>
         <p className={styles.kicker}>TEST THE WORKFLOW</p>
         <h2>Send one public product URL.<br />We will define the paid pilot before work begins.</h2>
-        <a href={inquiryHref} className={styles.primary}>Request a fixed-scope quote <span>→</span></a>
+        <a href={inquiryHref} target="_blank" rel="noreferrer" className={styles.primary}>Request a fixed-scope quote <span>→</span></a>
       </section>
 
       <footer className={styles.footer}>

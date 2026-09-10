@@ -47,6 +47,8 @@ const process = [
   ["5", "사후 관리", "필요한 유지보수와 다음 단계를 지원합니다."],
 ];
 
+const listingRequestForm = "https://docs.google.com/forms/d/e/1FAIpQLSdS5ZAi6gEM6MM0kwVl0LV8_aqXO-IRBs8RkvMJaGtrE_RnjQ/viewform";
+
 function Icon({ name, size = 22 }: { name: IconName; size?: number }) {
   const common = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
   if (name === "app") return <svg {...common}><rect x="7" y="3" width="10" height="18" rx="2" /><path d="M11 18h2" /></svg>;
@@ -177,7 +179,7 @@ export default async function Home() {
               <b>구매 전, 공개 상품 URL 하나로 미니 진단을 받아보세요.</b>
               <span>상품 URL · 판매 채널 · 옵션 수 · 희망 완료일을 보내주시면 확인 후 답변드립니다.</span>
             </div>
-            <a className="button primary" href="mailto:allweek@naver.com?subject=%5BToolsLab%5D%20%EC%83%81%ED%92%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%AF%B8%EB%8B%88%20%EC%A7%84%EB%8B%A8%20%EC%8B%A0%EC%B2%AD&amp;body=%EC%83%81%ED%92%88%20URL%3A%0A%ED%8C%90%EB%A7%A4%20%EC%B1%84%EB%84%90%3A%0A%EC%98%B5%EC%85%98%20%EC%88%98%3A%0A%ED%9D%AC%EB%A7%9D%20%EC%99%84%EB%A3%8C%EC%9D%BC%3A">무료 미니 진단 신청 <Icon name="arrow" size={17} /></a>
+            <a className="button primary" href={listingRequestForm} target="_blank" rel="noreferrer">무료 미니 진단 신청 <Icon name="arrow" size={17} /></a>
           </div>
 
           <div className="listing-links" aria-label="해외 주문과 직접 제작 자료">
