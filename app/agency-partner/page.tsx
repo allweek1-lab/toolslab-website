@@ -121,6 +121,7 @@ export default function AgencyPartnerPage() {
         <p className={styles.kicker}>TEST THE WORKFLOW</p>
         <h2>Send one public product URL.<br />We will define the paid pilot before work begins.</h2>
         <a href={inquiryHref} target="_blank" rel="noreferrer" className={styles.primary}>Request a fixed-scope quote <span>→</span></a>
+        <p className={styles.readMore}><Link href="/insights/listing-source-audit">Read the 7-point source-audit checklist →</Link></p>
       </section>
 
       <footer className={styles.footer}>

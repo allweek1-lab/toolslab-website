@@ -34,6 +34,7 @@
 .fit ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }.fit li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.2); }.fit li::before { content: "→"; color: #70a4ff; margin-right: 12px; }
 .faq { max-width: 1180px; margin: 0 auto; padding: 120px 30px; }.faqGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }.faqGrid article { background: #fff; padding: 32px; }.faqGrid h3 { margin: 0 0 12px; }.faqGrid p { margin: 0; }
 .finalCta { text-align: center; padding: 110px 30px; background: #e9f0ff; }.finalCta h2 { max-width: 850px; margin: 0 auto 38px; }.finalCta .primary { margin: 0 auto; }
+.readMore { margin: 24px 0 0; font-size: 13px; }.readMore a { color: var(--ink); border-bottom: 1px solid #9eacc0; }
 .footer { max-width: 1180px; margin: 0 auto; padding: 34px 30px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; }.footer a { color: inherit; }
 @media (max-width: 800px) {
   .hero { grid-template-columns: 1fr; padding-top: 60px; gap: 44px; }.hero h1 { font-size: 50px; }.trustStrip { grid-template-columns: repeat(2, 1fr); }.deliverables, .process ol { grid-template-columns: 1fr; }.fit { grid-template-columns: 1fr; gap: 44px; }.faqGrid { grid-template-columns: 1fr; }.footer { flex-direction: column; align-items: flex-start; gap: 12px; }
