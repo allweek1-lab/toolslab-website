@@ -1,1 +1,35 @@
-.page{--ink:#12233a;--muted:#617086;--blue:#155eef;--line:#dce4ef;color:var(--ink);background:#f8fafc;min-height:100vh}.header{max-width:980px;height:76px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700}.brand{font-size:21px}.brand span,.kicker{color:var(--blue)}article{max-width:980px;margin:auto;padding:72px 28px 110px}.hero{max-width:850px}.kicker{font-size:12px;font-weight:800;letter-spacing:.14em}.hero h1{margin:20px 0 28px;font-size:clamp(46px,7vw,78px);line-height:1;letter-spacing:-.055em}.lead{max-width:720px;color:var(--muted);font-size:20px;line-height:1.65}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}.actions a,.cta a{padding:16px 20px;border-radius:5px;background:var(--blue);color:#fff;font-size:14px;font-weight:750}.actions a+ a{background:#fff;color:var(--ink);border:1px solid var(--line)}.intro{margin:90px 0 35px;padding:28px 30px;background:#eaf1ff;border-left:4px solid var(--blue)}.intro p{margin:0;font-size:18px;line-height:1.7}.checks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.checks li{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:34px 0;border-bottom:1px solid var(--line)}.checks span{color:var(--blue);font-size:12px;font-weight:800}.checks h2{margin:0 0 10px;font-size:25px}.checks p,.decision p,.cta p{margin:0;color:var(--muted);line-height:1.7}.decision{margin:90px 0;padding:54px;background:var(--ink);color:#fff}.decision h2{max-width:700px;margin:15px 0 20px;font-size:38px;line-height:1.12;letter-spacing:-.035em}.decision p{color:#b7c5d6}.cta{text-align:center;padding:70px 30px;background:#edf3ff}.cta h2{margin:0 0 14px;font-size:36px}.cta p{max-width:620px;margin:0 auto 32px}footer{max-width:980px;margin:auto;padding:30px 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:13px}@media(max-width:600px){article{padding-top:45px}.hero h1{font-size:45px}.checks li{grid-template-columns:42px 1fr}.decision{padding:34px 26px}.decision h2,.cta h2{font-size:30px}.actions a{width:100%;text-align:center}footer{flex-direction:column;gap:10px}}
+.page { --ink:#12233a; --muted:#617086; --blue:#155eef; --line:#dce4ef; color:var(--ink); background:#f8fafc; min-height:100vh; }
+.header { max-width:980px; height:76px; margin:auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between; font-size:14px; font-weight:700; }
+.brand { font-size:21px; }
+.brand span, .kicker { color:var(--blue); }
+.page article { max-width:980px; margin:auto; padding:72px 28px 110px; }
+.hero { max-width:850px; }
+.kicker { font-size:12px; font-weight:800; letter-spacing:.14em; }
+.hero h1 { margin:20px 0 28px; font-size:clamp(46px,7vw,78px); line-height:1; letter-spacing:-.055em; }
+.lead { max-width:720px; color:var(--muted); font-size:20px; line-height:1.65; }
+.actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:36px; }
+.actions a, .cta a { padding:16px 20px; border-radius:5px; background:var(--blue); color:#fff; font-size:14px; font-weight:750; }
+.actions a + a { background:#fff; color:var(--ink); border:1px solid var(--line); }
+.intro { margin:90px 0 35px; padding:28px 30px; background:#eaf1ff; border-left:4px solid var(--blue); }
+.intro p { margin:0; font-size:18px; line-height:1.7; }
+.checks { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+.checks li { display:grid; grid-template-columns:70px 1fr; gap:20px; padding:34px 0; border-bottom:1px solid var(--line); }
+.checks span { color:var(--blue); font-size:12px; font-weight:800; }
+.checks h2 { margin:0 0 10px; font-size:25px; }
+.checks p, .decision p, .cta p { margin:0; color:var(--muted); line-height:1.7; }
+.decision { margin:90px 0; padding:54px; background:var(--ink); color:#fff; }
+.decision h2 { max-width:700px; margin:15px 0 20px; font-size:38px; line-height:1.12; letter-spacing:-.035em; }
+.decision p { color:#b7c5d6; }
+.cta { text-align:center; padding:70px 30px; background:#edf3ff; }
+.cta h2 { margin:0 0 14px; font-size:36px; }
+.cta p { max-width:620px; margin:0 auto 32px; }
+.page footer { max-width:980px; margin:auto; padding:30px 28px; border-top:1px solid var(--line); display:flex; justify-content:space-between; color:var(--muted); font-size:13px; }
+@media (max-width:600px) {
+  .page article { padding-top:45px; }
+  .hero h1 { font-size:45px; }
+  .checks li { grid-template-columns:42px 1fr; }
+  .decision { padding:34px 26px; }
+  .decision h2, .cta h2 { font-size:30px; }
+  .actions a { width:100%; text-align:center; }
+  .page footer { flex-direction:column; gap:10px; }
+}
