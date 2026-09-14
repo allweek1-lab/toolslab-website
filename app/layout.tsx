@@ -3,21 +3,22 @@ import { headers } from "next/headers";
 import "./globals.css";
 
 const siteDescription =
-  "앱 개발, 웹페이지 제작, 로고와 브랜드 개발, AI 광고 영상까지. 아이디어를 제품으로 만드는 디지털 제작 스튜디오 툴스랩입니다.";
+  "엑셀·CSV 업무 자동화, 앱·웹페이지 개발, 로고와 AI 광고 영상 제작. 필요한 범위와 결과물을 먼저 확인하는 툴스랩입니다.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host = requestHeaders.get("host") ?? "toolslab.co.kr";
-  const protocol = host.startsWith("localhost") ? "http" : "https";
-  const origin = `${protocol}://${host}`;
+  const origin = host.split(":")[0].toLowerCase() === "trendthreads.toolslab.co.kr"
+    ? "https://trendthreads.toolslab.co.kr"
+    : "https://toolslab.co.kr";
 
   return {
     metadataBase: new URL(origin),
     title: "툴스랩 | 앱·웹·브랜드·AI 영상 제작 스튜디오",
     description: siteDescription,
     openGraph: {
-      title: "툴스랩 | Make Ideas Real",
-      description: "아이디어를 제품으로, 브랜드를 경험으로.",
+      title: "툴스랩 | 엑셀 자동화·앱·웹 제작",
+      description: siteDescription,
       type: "website",
       locale: "ko_KR",
       siteName: "TOOLS LAB",
@@ -25,8 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "툴스랩 | Make Ideas Real",
-      description: "아이디어를 제품으로, 브랜드를 경험으로.",
+      title: "툴스랩 | 엑셀 자동화·앱·웹 제작",
+      description: siteDescription,
       images: [`${origin}/og.png`],
     },
   };

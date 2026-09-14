@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { companyPageMetadata, JsonLd } from "./site-metadata";
+
+export const metadata = companyPageMetadata(
+  "툴스랩 | 엑셀 자동화·앱·웹 제작",
+  "엑셀·CSV 파일 취합과 보고서 자동화부터 앱·웹 제작까지. 무료 자동화 데모와 제작 예시를 확인하고 필요한 업무를 상담하세요.",
+  "/",
+);
 
 type IconName = "app" | "web" | "brand" | "video" | "arrow" | "mail" | "check" | "code" | "clock";
 
@@ -73,6 +80,7 @@ export default async function Home() {
 
   return (
     <main id="top">
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "Organization", "@id": "https://toolslab.co.kr/#organization", name: "툴스랩", alternateName: "ToolsLab", url: "https://toolslab.co.kr/", email: "allweek@naver.com", telephone: "+82-70-4350-3571" }} />
       <header className="site-header">
         <a href="#top" aria-label="툴스랩 홈으로"><Brand /></a>
         <nav aria-label="주요 메뉴">
@@ -91,8 +99,8 @@ export default async function Home() {
         <div className="hero-image" aria-hidden="true" />
         <div className="hero-copy">
           <p className="hero-chip"><i /> 디지털 혁신과 장인정신의 만남</p>
-          <h1>기술과 예술의 경계를 허무는<br /><strong>크리에이티브 랩, 툴스랩</strong></h1>
-          <p>비즈니스의 디지털 혁신부터 브랜드의 감성까지, 툴스랩이 완성합니다.</p>
+          <h1>엑셀 자동화부터 앱·웹 제작까지<br /><strong>업무에 필요한 도구를 만듭니다.</strong></h1>
+          <p>여러 파일을 하나로 합치는 반복 업무부터 새로운 서비스 제작까지. 툴스랩의 데모와 제작 예시를 먼저 확인하세요.</p>
           <div className="hero-actions">
             <a className="button primary" href="mailto:allweek@naver.com">프로젝트 문의하기 <Icon name="arrow" size={17} /></a>
             <a className="button soft" href="#services">서비스 보기</a>

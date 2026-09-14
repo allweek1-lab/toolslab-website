@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Inquiry from "./inquiry";
+import { companyPageMetadata, JsonLd } from "../site-metadata";
 
-export const metadata: Metadata = {
-  title: "엑셀 반복업무 자동화 · 19만 원부터 | 툴스랩",
-  description: "여러 엑셀 파일 취합부터 오류 확인, 보고서 생성까지. 실제 작동하는 무료 데모를 확인하고 우리 업무에 맞는 자동화를 문의하세요.",
-  alternates: { canonical: "https://toolslab.co.kr/automation" },
-  openGraph: { title: "엑셀 복붙, 이번 주로 끝내세요. | 툴스랩", description: "파일 취합·중복 확인·보고서 생성을 하나의 도구로. 샘플로 직접 체험하세요.", url: "https://toolslab.co.kr/automation" },
-};
+export const metadata = companyPageMetadata(
+  "엑셀·CSV 취합 자동화 맞춤 제작 · 19만 원부터 | 툴스랩",
+  "여러 엑셀·CSV 파일을 하나의 보고서로 합치고 누락과 중복 후보를 확인하는 맞춤 도구를 제작합니다. 입력 양식 1종·출력 보고서 1종 기준 19만원부터. 무료 데모로 결과를 확인하세요.",
+  "/automation",
+);
 
 export default function AutomationPage() {
   return <main id="main-content">
+    <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", "@id": "https://toolslab.co.kr/automation#service", name: "엑셀·CSV 취합 자동화 맞춤 제작", serviceType: "엑셀 파일 취합·검증·보고서 자동화", url: "https://toolslab.co.kr/automation", description: "입력 양식 1종과 출력 보고서 1종, 합의한 취합·검증·집계 규칙을 구현하는 맞춤 제작. 19만원부터이며 자료 확인 후 총금액과 납기를 확정합니다.", provider: { "@type": "Organization", "@id": "https://toolslab.co.kr/#organization", name: "툴스랩", url: "https://toolslab.co.kr/" } }} />
     <section className="au-hero au-wrap">
-      <div><p className="au-kicker"><span /> EXCEL WORKFLOW AUTOMATION</p><h1>엑셀 복붙,<br />이번 주로<br /><em>끝내세요.</em></h1><p className="au-lead">매번 파일을 열고, 합치고, 확인하는 일.<br />지금 쓰는 양식에 맞춰 하나의 도구로 만듭니다.</p><div className="au-actions"><Link className="au-button au-primary" href="/automation/demo">샘플로 직접 체험 <span>↗</span></Link><a className="au-button au-secondary" href="#pricing">제작 범위와 가격</a></div><p className="au-caption">회원가입 없이 체험 · 파일은 브라우저 안에서 처리</p></div>
+      <div><p className="au-kicker"><span /> EXCEL WORKFLOW AUTOMATION</p><h1>엑셀·CSV 파일을<br /><em>하나로 합치세요.</em></h1><p className="au-lead">여러 파일 취합, 누락·중복 후보 확인, 보고서 생성까지.<br />지금 쓰는 양식에 맞춰 반복 업무 도구를 제작합니다.</p><div className="au-actions"><Link className="au-button au-primary" href="/automation/demo">샘플로 직접 체험 <span>↗</span></Link><a className="au-button au-secondary" href="#pricing">제작 범위와 가격</a></div><p className="au-caption">회원가입 없이 체험 · 파일은 브라우저 안에서 처리</p></div>
       <div className="au-proof" aria-label="데모에서 제공하는 파일 처리 흐름"><div className="au-windowbar"><span className="au-dots">● ● ●</span><span>ToolsLab / 파일 취합</span><span className="au-live">실행 가능한 데모</span></div><div className="au-proof-body"><div className="au-proof-label"><span>01 / INPUT</span><span>같은 양식, 여러 파일</span></div><div className="au-file-stack">{["강남점_주간실적.csv", "마포점_주간실적.xlsx", "분당점_주간실적.csv"].map(name => <div key={name}><span className="au-file-icon">X</span><span>{name}</span><span className="au-check">✓</span></div>)}</div><div className="au-transform"><span>↓</span><p>열 맞춤 <b>·</b> 누락 확인 <b>·</b> 중복 표시</p></div><div className="au-output"><div><span className="au-file-icon">X</span><strong>통합_보고서.xlsx</strong><span>4개 시트</span></div><ul><li>통합 데이터 <b>✓</b></li><li>확인 필요 목록 <b>✓</b></li><li>지점별 요약 <b>✓</b></li><li>처리 요약 <b>✓</b></li></ul></div><p className="au-caption">가상 지점 자료를 사용하는 기능 시연입니다.</p></div></div>
     </section>
     <section className="au-value-strip"><div className="au-wrap"><p><strong>한 번의 취합</strong><span>파일을 하나씩 열지 않도록</span></p><p><strong>확인할 것만 따로</strong><span>누락과 중복 후보를 놓치지 않도록</span></p><p><strong>출처까지 추적</strong><span>원본 파일과 행 번호를 찾을 수 있도록</span></p></div></section>
@@ -25,10 +25,13 @@ export default function AutomationPage() {
     <section className="au-section au-wrap"><p className="au-kicker">HOW IT WORKS</p><h2>설명은 짧게,<br />결과는 직접 확인하세요.</h2><ol className="au-steps"><li><span>01</span><h3>작업 설명</h3><p>지금 하는 일과 원하는 결과를 알려주세요. 처음에는 개인정보를 지운 샘플이면 됩니다.</p></li><li><span>02</span><h3>범위·견적 확정</h3><p>입력 양식, 처리 규칙, 결과물, 납기를 합의합니다.</p></li><li><span>03</span><h3>샘플 검수·납품</h3><p>합의한 사례로 결과를 확인하고 실행 도구와 사용법을 전달합니다.</p></li></ol></section>
     <section className="au-wrap au-faq"><h2>자주 묻는 질문</h2>{[
       ["제가 쓰는 엑셀 양식도 가능한가요?", "열 이름과 실제 작업 규칙을 확인한 뒤 안내합니다. 공개 데모는 정해진 양식의 예시이며, 맞춤 제작에서는 합의한 고객 양식에 맞춰 구현합니다."],
+      ["중복된 행은 자동으로 삭제하나요?", "공개 데모는 중복 후보를 표시하고 원본 행을 남깁니다. 같은 주문의 여러 품목이나 분할 결제는 정상 기록일 수 있으므로, 맞춤 제작에서도 삭제 기준은 먼저 합의합니다."],
+      ["19만원에 어떤 작업이 포함되나요?", "입력 양식 1종, 출력 보고서 1종과 합의한 처리 규칙이 시작 상품의 기준입니다. 사용 안내, 합의 범위 내 수정 1회, 검수 완료 후 14일간 합의 기능 오류 수정을 포함합니다. 자료 확인 후 총금액과 세금 처리 기준을 견적서에서 확정합니다."],
       ["데모에 파일을 넣으면 어디로 보내지나요?", "데모는 브라우저 안에서 파일을 읽고 결과를 생성합니다. 파일을 서버에 업로드하거나 저장하지 않습니다. 새로고침하면 선택한 파일과 결과가 초기화됩니다."],
       ["AI 이용료가 계속 발생하나요?", "이 데모의 파일 취합과 검증에는 AI API를 사용하지 않습니다. 맞춤 제작에서 외부 유료 서비스가 필요한 경우, 계약 전에 별도로 안내합니다."],
       ["제작 기간은 얼마나 걸리나요?", "샘플 자료와 요구사항을 확인한 뒤 납기를 확정합니다. 파일 형식과 규칙의 복잡도에 따라 달라지며, 문의만으로 제작 일정이 확정되지는 않습니다."],
     ].map(([q, a]) => <details key={q}><summary>{q}<span>＋</span></summary><p>{a}</p></details>)}</section>
+    <section className="au-wrap au-demo-cta"><div><h2>합치기 전에 무엇을 확인해야 할까요?</h2><p>열 이름, 누락, 중복 후보를 작은 예시로 설명합니다.</p></div><Link className="au-button au-secondary" href="/automation/excel-csv-merge-guide">엑셀·CSV 취합 안내 읽기</Link></section>
     <section className="au-section au-wrap au-contact" id="contact"><div><p className="au-kicker">LET’S SIMPLIFY YOUR WORK</p><h2>어떤 일을<br />반복하고 계신가요?</h2><p>파일 종류와 작업 순서만 알려주세요.<br />가능한 범위부터 함께 확인하겠습니다.</p><div className="au-actions"><a className="au-button au-primary" href="https://pf.kakao.com/_xosxkJX/chat" target="_blank" rel="noreferrer">카카오톡으로 상담 ↗</a><a className="au-button au-secondary" href="mailto:allweek@naver.com">이메일 문의</a></div></div><Inquiry /></section>
   </main>;
 }
