@@ -179,6 +179,25 @@ test("root app-ads file publishes exactly the NihongoQ AdMob seller relationship
   assert.equal(appAds, "google.com, pub-8346658230857877, DIRECT, f08c47fec0942fa0\n");
 });
 
+test("automation page offers a low-risk diagnosis before the full custom build", async () => {
+  const [page, inquiry, guide] = await Promise.all([
+    source("app/automation/page.tsx"),
+    source("app/automation/inquiry.tsx"),
+    source("app/automation/excel-csv-merge-guide/page.tsx"),
+  ]);
+  for (const required of [
+    "업무 진단·작동 샘플",
+    "49,000",
+    "190,000",
+    "전액 차감",
+    "전체 제작 범위·금액·일정 안내",
+    'id="diagnosis"',
+  ]) assert.match(page, new RegExp(required));
+  assert.match(inquiry, /문의 유형/);
+  assert.match(inquiry, /49,000원 진단·작동 샘플/);
+  assert.match(guide, /진단·작동 샘플은 49,000원/);
+});
+
 test("privacy policy is English-primary, Korean-secondary, and names actual processors", async () => {
   const privacy = await source("app/privacy/page.tsx");
   for (const required of ["Trend Threads Privacy Policy", "English is the primary policy language", "한국어 개인정보 처리방침", "선택적 Threads 연결", "Supabase, Inc.", "Vercel Inc.", "Meta Threads API", "보관과 삭제", "계정 삭제", "allweek@naver.com"]) {
