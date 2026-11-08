@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date("2026-09-10T09:50:00Z");
   const automationUpdated = new Date("2026-09-14T11:00:00Z");
   return [
+    ...["/daily-travel-japanese", "/daily-travel-japanese/support", "/daily-travel-japanese/privacy"].map(path => ({url: `${origin}${path}`, lastModified: new Date("2026-11-08T11:00:00Z"), changeFrequency: "monthly" as const, priority: 0.6})),
     { url: `${origin}/automation/excel-csv-merge-guide`, lastModified: automationUpdated, changeFrequency: "monthly", priority: 0.7 },
     { url: `${origin}/`, lastModified: automationUpdated, changeFrequency: "weekly", priority: 1 },
     { url: `${origin}/agency-partner`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },

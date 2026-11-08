@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { DailyJapaneseShell } from "../shell";
+import { supportKo, supportEn } from "../content";
+export const metadata:Metadata={title:"매일 여행 일본어 고객지원 | Daily Travel Japanese Support",description:"Help with daily phrase reminders, vocabulary cards and reading aids.",alternates:{canonical:"https://toolslab.co.kr/daily-travel-japanese/support"}};
+export default function SupportPage(){return <DailyJapaneseShell><main className="legal-page nq-legal-page"><article className="legal-document"><div className="legal-intro"><p className="eyebrow">SUPPORT</p><h1>고객지원 / Support</h1><p>매일 여행 일본어 · Daily Travel Japanese</p><p><a href="mailto:allweek1@gmail.com">allweek1@gmail.com</a></p></div><div className="legal-content"><section lang="ko"><h2>자주 묻는 질문</h2><ul>{supportKo.map((p,i)=><li key={i}>{p.replace(/^- /,"")}</li>)}</ul></section><section lang="en"><h2>Frequently asked questions</h2><ul>{supportEn.map((p,i)=><li key={i}>{p.replace(/^- /,"")}</li>)}</ul></section></div></article></main></DailyJapaneseShell>;}
